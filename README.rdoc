@@ -1,28 +1,16 @@
-== README
+== Trailer Tank
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Trailer Tank is a Ruby on Rails web app that:
 
-Things you may want to cover:
+* Lets users login via Google Apps Oauth
 
-* Ruby version
+* Links EvergreenILS record ids with Youtube videos
 
-* System dependencies
+* Returns youtube video ids in a JSON response when queried with a record id
 
-* Configuration
+* Allows for editing and maintenance
 
-* Database creation
+* Displays a leaderboard
 
-* Database initialization
+At this time the project will be designed to work just with Traverse Area District Library's Evergreen ILS.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
