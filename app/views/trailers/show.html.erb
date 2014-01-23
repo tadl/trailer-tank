@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Record:</strong>
+  <%= @trailer.record_id %>
+</p>
+
+<p>
+  <strong>Added by:</strong>
+  <%= @trailer.added_by %>
+</p>
+
+<p>
+  <strong>Youtube url:</strong>
+  <%= @trailer.youtube_url %>
+</p>
+
+<p>
+  <strong>Release date:</strong>
+  <%= @trailer.release_date %>
+</p>
+
+<p>
+  <strong>Tile:</strong>
+  <%= @trailer.tile %>
+</p>
+
+<p>
+  <strong>Artist:</strong>
+  <%= @trailer.artist %>
+</p>
+
+<%= link_to 'Edit', edit_trailer_path(@trailer) %> |
+<%= link_to 'Back', trailers_path %>

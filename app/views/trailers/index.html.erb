@@ -1,0 +1,37 @@
+<h1>Listing trailers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Record</th>
+      <th>Added by</th>
+      <th>Youtube url</th>
+      <th>Release date</th>
+      <th>Tile</th>
+      <th>Artist</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trailers.each do |trailer| %>
+      <tr>
+        <td><%= trailer.record_id %></td>
+        <td><%= trailer.added_by %></td>
+        <td><%= trailer.youtube_url %></td>
+        <td><%= trailer.release_date %></td>
+        <td><%= trailer.tile %></td>
+        <td><%= trailer.artist %></td>
+        <td><%= link_to 'Show', trailer %></td>
+        <td><%= link_to 'Edit', edit_trailer_path(trailer) %></td>
+        <td><%= link_to 'Destroy', trailer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Trailer', new_trailer_path %>

@@ -1,0 +1,2869 @@
+Script started on Wed 22 Jan 2014 09:46:32 PM UTC
+[01;32maction@railsbox-1-40317[00m:[01;36m~/trailer-tank[00m(master*)$ rails s -p 4000[7Pcd xsiterails s -p 4000[7Pcd xsiterails s -p 4000[7Pcd xsiterails s -p 4000[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kcd xsiterails s -p 4000[7Pcd xsiterails s -p 4000[7Pcd xsiterails s -p 4000[7Pcd xsiterails s -p 4000[K[K[K[K[K[K[K[K[K[K g scaffold trailer record_id:integer added_by:string youtube_url:string release_date:string tile:string artist:string
+[1m[37m      invoke[0m  active_record
+[1m[32m      create[0m    db/migrate/20140122214715_create_trailers.rb
+[1m[32m      create[0m    app/models/trailer.rb
+[1m[37m      invoke[0m    test_unit
+[1m[32m      create[0m      test/models/trailer_test.rb
+[1m[32m      create[0m      test/fixtures/trailers.yml
+[1m[37m      invoke[0m  resource_route
+[1m[32m       route[0m    resources :trailers
+[1m[37m      invoke[0m  scaffold_controller
+[1m[32m      create[0m    app/controllers/trailers_controller.rb
+[1m[37m      invoke[0m    erb
+[1m[32m      create[0m      app/views/trailers
+[1m[32m      create[0m      app/views/trailers/index.html.erb
+[1m[32m      create[0m      app/views/trailers/edit.html.erb
+[1m[32m      create[0m      app/views/trailers/show.html.erb
+[1m[32m      create[0m      app/views/trailers/new.html.erb
+[1m[32m      create[0m      app/views/trailers/_form.html.erb
+[1m[37m      invoke[0m    test_unit
+[1m[32m      create[0m      test/controllers/trailers_controller_test.rb
+[1m[37m      invoke[0m    helper
+[1m[32m      create[0m      app/helpers/trailers_helper.rb
+[1m[37m      invoke[0m      test_unit
+[1m[32m      create[0m        test/helpers/trailers_helper_test.rb
+[1m[37m      invoke[0m    jbuilder
+[1m[32m      create[0m      app/views/trailers/index.json.jbuilder
+[1m[32m      create[0m      app/views/trailers/show.json.jbuilder
+[1m[37m      invoke[0m  assets
+[1m[37m      invoke[0m    coffee
+[1m[32m      create[0m      app/assets/javascripts/trailers.js.coffee
+[1m[37m      invoke[0m    scss
+[1m[32m      create[0m      app/assets/stylesheets/trailers.css.scss
+[1m[37m      invoke[0m  scss
+[1m[32m      create[0m    app/assets/stylesheets/scaffolds.css.scss
+[01;32maction@railsbox-1-40317[00m:[01;36m~/trailer-tank[00m(master*)$ rake db:migrate
+rake aborted!
+could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?
+/home/action/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/connection_adapters/postgresql_adapter.rb:825:in `initialize'
+/home/action/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/connection_adapters/postgresql_adapter.rb:825:in `new'
+/home/action/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/connection_adapters/postgresql_adapter.rb:825:in `connect'
+/home/action/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/connection_adapters/postgresql_adapter.rb:542:in `initialize'
+/home/action/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/connection_adapters/postgresql_adapter.rb:41:in `new'
+/home/action/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/connection_adapters/postgresql_adapter.rb:41:in `postgresql_connection'
+/home/action/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/connection_adapters/abstract/connection_pool.rb:440:in `new_connection'
+/home/action/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/connection_adapters/abstract/connection_pool.rb:450:in `checkout_new_connection'
+/home/action/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/connection_adapters/abstract/connection_pool.rb:421:in `acquire_connection'
+/home/action/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/connection_adapters/abstract/connection_pool.rb:356:in `block in checkout'
+/home/action/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/connection_adapters/abstract/connection_pool.rb:355:in `checkout'
+/home/action/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/connection_adapters/abstract/connection_pool.rb:265:in `block in connection'
+/home/action/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/connection_adapters/abstract/connection_pool.rb:264:in `connection'
+/home/action/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/connection_adapters/abstract/connection_pool.rb:546:in `retrieve_connection'
+/home/action/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/connection_handling.rb:79:in `retrieve_connection'
+/home/action/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/connection_handling.rb:53:in `connection'
+/home/action/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/migration.rb:863:in `initialize'
+/home/action/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/migration.rb:764:in `new'
+/home/action/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/migration.rb:764:in `up'
+/home/action/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/migration.rb:742:in `migrate'
+/home/action/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/railties/databases.rake:42:in `block (2 levels) in <top (required)>'
+Tasks: TOP => db:migrate
+(See full trace by running task with --trace)
+[01;32maction@railsbox-1-40317[00m:[01;36m~/trailer-tank[00m(master*)$ rake db:migrate
+==  CreateTrailers: migrating =================================================
+-- create_table(:trailers)
+   -> 0.0746s
+==  CreateTrailers: migrated (0.0748s) ========================================
+
+[01;32maction@railsbox-1-40317[00m:[01;36m~/trailer-tank[00m(master*)$ reail[K[K[K[K[Ka[Krails s -p 4000
+=> Booting WEBrick
+=> Rails 4.0.0 application starting in development on http://0.0.0.0:4000
+=> Run `rails server -h` for more startup options
+=> Ctrl-C to shutdown server
+[2014-01-22 21:48:03] INFO  WEBrick 1.3.1
+[2014-01-22 21:48:03] INFO  ruby 2.0.0 (2013-06-27) [x86_64-linux]
+[2014-01-22 21:48:03] INFO  WEBrick::HTTPServer#start: pid=599 port=4000
+
+
+Started GET "/" for 71.83.13.240 at 2014-01-22 21:48:06 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 398ms (Views: 372.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 71.83.13.240 at 2014-01-22 21:48:07 +0000
+
+
+Started GET "/assets/main.css?body=1" for 71.83.13.240 at 2014-01-22 21:48:07 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 71.83.13.240 at 2014-01-22 21:48:07 +0000
+
+
+Started GET "/assets/trailers.css?body=1" for 71.83.13.240 at 2014-01-22 21:48:07 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 71.83.13.240 at 2014-01-22 21:48:07 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 71.83.13.240 at 2014-01-22 21:48:07 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 71.83.13.240 at 2014-01-22 21:48:07 +0000
+
+
+Started GET "/assets/main.js?body=1" for 71.83.13.240 at 2014-01-22 21:48:07 +0000
+
+
+Started GET "/assets/trailers.js?body=1" for 71.83.13.240 at 2014-01-22 21:48:07 +0000
+
+
+Started GET "/assets/application.js?body=1" for 71.83.13.240 at 2014-01-22 21:48:07 +0000
+
+
+Started GET "/trailers" for 71.83.13.240 at 2014-01-22 21:48:14 +0000
+Processing by TrailersController#index as HTML
+  [1m[35mTrailer Load (0.8ms)[0m  SELECT "trailers".* FROM "trailers"
+  Rendered trailers/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 18ms (Views: 13.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 71.83.13.240 at 2014-01-22 21:48:14 +0000
+
+
+Started GET "/assets/trailers.css?body=1" for 71.83.13.240 at 2014-01-22 21:48:14 +0000
+
+
+Started GET "/assets/trailers.js?body=1" for 71.83.13.240 at 2014-01-22 21:48:14 +0000
+^C[2014-01-22 23:22:11] INFO  going to shutdown ...
+[2014-01-22 23:22:11] INFO  WEBrick::HTTPServer#start done.
+Exiting
+[01;32maction@railsbox-1-40317[00m:[01;36m~/trailer-tank[00m(master*)$ bundle install
+Resolving dependencies...
+Using rake (10.1.1) 
+Using i18n (0.6.9) 
+Using minitest (4.7.5) 
+Using multi_json (1.8.4) 
+Using atomic (1.1.14) 
+Using thread_safe (0.1.3) 
+Using tzinfo (0.3.38) 
+Using activesupport (4.0.0) 
+Using builder (3.1.4) 
+Using erubis (2.7.0) 
+Using rack (1.5.2) 
+Using rack-test (0.6.2) 
+Using actionpack (4.0.0) 
+Using mime-types (1.25.1) 
+Using polyglot (0.3.3) 
+Using treetop (1.4.15) 
+Using mail (2.5.4) 
+Using actionmailer (4.0.0) 
+Using activemodel (4.0.0) 
+Using activerecord-deprecated_finders (1.0.3) 
+Using arel (4.0.1) 
+Using activerecord (4.0.0) 
+Using bcrypt-ruby (3.1.2) 
+Using bundler (1.3.5) 
+Using coffee-script-source (1.6.3) 
+Using execjs (2.0.2) 
+Using coffee-script (2.2.0) 
+Using thor (0.18.1) 
+Using railties (4.0.0) 
+Using coffee-rails (4.0.1) 
+Using orm_adapter (0.5.0) 
+Using warden (1.2.3) 
+Using devise (3.2.2) 
+Using unf_ext (0.0.6) 
+Using unf (0.1.2) 
+Using domain_name (0.5.13) 
+Using hike (1.2.3) 
+Using http-cookie (1.0.2) 
+Using jbuilder (1.5.3) 
+Using jquery-rails (3.0.4) 
+Using json (1.8.1) 
+Using kgio (2.8.1) 
+Using net-http-digest_auth (1.4) 
+Using net-http-persistent (2.9) 
+Using mini_portile (0.5.2) 
+Using nokogiri (1.6.1) 
+Using ntlm-http (0.1.1) 
+Using webrobots (0.1.1) 
+Using mechanize (2.7.2) 
+Using pg (0.17.1) 
+Using tilt (1.4.1) 
+Using sprockets (2.10.1) 
+Using sprockets-rails (2.0.1) 
+Using rails (4.0.0) 
+Using rails_serve_static_assets (0.0.2) 
+Using rails_stdout_logging (0.0.3) 
+Using rails_12factor (0.0.2) 
+Using raindrops (0.12.0) 
+Using rdoc (4.1.1) 
+Using sass (3.2.13) 
+Using sass-rails (4.0.1) 
+Using sdoc (0.4.0) 
+Using turbolinks (2.2.0) 
+Using uglifier (2.4.0) 
+Using unicorn (4.7.0) 
+[32mYour bundle is complete![0m
+[32mUse `bundle show [gemname]` to see where a bundled gem is installed.[0m
+[01;32maction@railsbox-1-40317[00m:[01;36m~/trailer-tank[00m(master*)$ bundle installrails s -p 4000ke db:migrateils s -p 4000
+=> Booting WEBrick
+=> Rails 4.0.0 application starting in development on http://0.0.0.0:4000
+=> Run `rails server -h` for more startup options
+=> Ctrl-C to shutdown server
+[2014-01-22 23:27:16] INFO  WEBrick 1.3.1
+[2014-01-22 23:27:16] INFO  ruby 2.0.0 (2013-06-27) [x86_64-linux]
+[2014-01-22 23:27:16] INFO  WEBrick::HTTPServer#start: pid=972 port=4000
+
+
+Started GET "/" for 71.83.13.240 at 2014-01-22 23:27:18 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MainController#index as HTML
+Completed 500 Internal Server Error in 24ms
+
+Errno::ENOENT (No such file or directory - https://www.tadl.org/mobile/export/items/32/json):
+  app/controllers/main_controller.rb:6:in `initialize'
+  app/controllers/main_controller.rb:6:in `open'
+  app/controllers/main_controller.rb:6:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.5ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.9ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (56.7ms)
+
+
+Started GET "/" for 71.83.13.240 at 2014-01-22 23:27:51 +0000
+Processing by MainController#index as HTML
+Completed 406 Not Acceptable in 3289ms
+
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  app/controllers/main_controller.rb:10:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (44.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (67.5ms)
+^C[2014-01-22 23:29:01] INFO  going to shutdown ...
+[2014-01-22 23:29:01] INFO  WEBrick::HTTPServer#start done.
+Exiting
+[01;32maction@railsbox-1-40317[00m:[01;36m~/trailer-tank[00m(master*)$ rails s -p 4000
+=> Booting WEBrick
+=> Rails 4.0.0 application starting in development on http://0.0.0.0:4000
+=> Run `rails server -h` for more startup options
+=> Ctrl-C to shutdown server
+[2014-01-22 23:29:09] INFO  WEBrick 1.3.1
+[2014-01-22 23:29:09] INFO  ruby 2.0.0 (2013-06-27) [x86_64-linux]
+[2014-01-22 23:29:09] INFO  WEBrick::HTTPServer#start: pid=990 port=4000
+
+
+Started GET "/" for 71.83.13.240 at 2014-01-22 23:29:20 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MainController#index as HTML
+Completed 406 Not Acceptable in 3111ms
+
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  app/controllers/main_controller.rb:10:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.5ms)
+
+
+Started GET "/" for 71.83.13.240 at 2014-01-22 23:30:52 +0000
+Processing by MainController#index as HTML
+Completed 406 Not Acceptable in 2852ms
+
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  app/controllers/main_controller.rb:11:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.0ms)
+^C[2014-01-22 23:31:05] INFO  going to shutdown ...
+[2014-01-22 23:31:05] INFO  WEBrick::HTTPServer#start done.
+Exiting
+[01;32maction@railsbox-1-40317[00m:[01;36m~/trailer-tank[00m(master*)$ rails s -p 4000
+=> Booting WEBrick
+=> Rails 4.0.0 application starting in development on http://0.0.0.0:4000
+=> Run `rails server -h` for more startup options
+=> Ctrl-C to shutdown server
+[2014-01-22 23:31:14] INFO  WEBrick 1.3.1
+[2014-01-22 23:31:14] INFO  ruby 2.0.0 (2013-06-27) [x86_64-linux]
+[2014-01-22 23:31:14] INFO  WEBrick::HTTPServer#start: pid=1008 port=4000
+
+
+Started GET "/" for 71.83.13.240 at 2014-01-22 23:31:18 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MainController#index as HTML
+Completed 406 Not Acceptable in 2767ms
+
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  app/controllers/main_controller.rb:11:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (27.0ms)
+^^C^C[2014-01-22 23:31:52] INFO  going to shutdown ...
+[2014-01-22 23:31:52] INFO  WEBrick::HTTPServer#start done.
+Exiting
+[01;32maction@railsbox-1-40317[00m:[01;36m~/trailer-tank[00m(master*)$ rails s -p 4000[1Pbundle install
+Resolving dependencies...
+Using rake (10.1.1) 
+Using i18n (0.6.9) 
+Using minitest (4.7.5) 
+Using multi_json (1.8.4) 
+Using atomic (1.1.14) 
+Using thread_safe (0.1.3) 
+Using tzinfo (0.3.38) 
+Using activesupport (4.0.0) 
+Using builder (3.1.4) 
+Using erubis (2.7.0) 
+Using rack (1.5.2) 
+Using rack-test (0.6.2) 
+Using actionpack (4.0.0) 
+Using mime-types (1.25.1) 
+Using polyglot (0.3.3) 
+Using treetop (1.4.15) 
+Using mail (2.5.4) 
+Using actionmailer (4.0.0) 
+Using activemodel (4.0.0) 
+Using activerecord-deprecated_finders (1.0.3) 
+Using arel (4.0.1) 
+Using activerecord (4.0.0) 
+Using bcrypt-ruby (3.1.2) 
+Using bundler (1.3.5) 
+Using coffee-script-source (1.6.3) 
+Using execjs (2.0.2) 
+Using coffee-script (2.2.0) 
+Using thor (0.18.1) 
+Using railties (4.0.0) 
+Using coffee-rails (4.0.1) 
+Using orm_adapter (0.5.0) 
+Using warden (1.2.3) 
+Using devise (3.2.2) 
+Using unf_ext (0.0.6) 
+Using unf (0.1.2) 
+Using domain_name (0.5.13) 
+Using hike (1.2.3) 
+Using http-cookie (1.0.2) 
+Using jbuilder (1.5.3) 
+Using jquery-rails (3.0.4) 
+Using json (1.8.1) 
+Using kgio (2.8.1) 
+Using net-http-digest_auth (1.4) 
+Using net-http-persistent (2.9) 
+Using mini_portile (0.5.2) 
+Using nokogiri (1.6.1) 
+Using ntlm-http (0.1.1) 
+Using webrobots (0.1.1) 
+Using mechanize (2.7.2) 
+Using pg (0.17.1) 
+Using tilt (1.4.1) 
+Using sprockets (2.10.1) 
+Using sprockets-rails (2.0.1) 
+Using rails (4.0.0) 
+Using rails_serve_static_assets (0.0.2) 
+Using rails_stdout_logging (0.0.3) 
+Using rails_12factor (0.0.2) 
+Using raindrops (0.12.0) 
+Using rdoc (4.1.1) 
+Using sass (3.2.13) 
+Using sass-rails (4.0.1) 
+Using sdoc (0.4.0) 
+Using turbolinks (2.2.0) 
+Using uglifier (2.4.0) 
+Using unicorn (4.7.0) 
+[32mYour bundle is complete![0m
+[32mUse `bundle show [gemname]` to see where a bundled gem is installed.[0m
+[01;32maction@railsbox-1-40317[00m:[01;36m~/trailer-tank[00m(master*)$ bundle installrails s -p 4000
+=> Booting WEBrick
+=> Rails 4.0.0 application starting in development on http://0.0.0.0:4000
+=> Run `rails server -h` for more startup options
+=> Ctrl-C to shutdown server
+[2014-01-22 23:32:04] INFO  WEBrick 1.3.1
+[2014-01-22 23:32:04] INFO  ruby 2.0.0 (2013-06-27) [x86_64-linux]
+[2014-01-22 23:32:04] INFO  WEBrick::HTTPServer#start: pid=1028 port=4000
+
+
+Started GET "/" for 71.83.13.240 at 2014-01-22 23:32:57 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MainController#index as HTML
+Completed 406 Not Acceptable in 2883ms
+
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  app/controllers/main_controller.rb:11:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.6ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.7ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.0ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (59.2ms)
+
+
+Started GET "/" for 71.83.13.240 at 2014-01-22 23:33:03 +0000
+Processing by MainController#index as HTML
+Completed 406 Not Acceptable in 2810ms
+
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  app/controllers/main_controller.rb:11:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.1ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.5ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.7ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (53.0ms)
+
+
+Started GET "/" for 71.83.13.240 at 2014-01-22 23:35:14 +0000
+Processing by MainController#index as HTML
+Completed 500 Internal Server Error in 4045ms
+
+RuntimeError (In order to use respond_with, first you need to declare the formats your controller responds to in the class level):
+  app/controllers/main_controller.rb:11:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (27.3ms)
+
+
+Started GET "/" for 71.83.13.240 at 2014-01-22 23:35:45 +0000
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3261ms (Views: 92.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 71.83.13.240 at 2014-01-22 23:35:48 +0000
+
+
+Started GET "/assets/trailers.css?body=1" for 71.83.13.240 at 2014-01-22 23:35:48 +0000
+
+
+Started GET "/assets/application.css?body=1" for 71.83.13.240 at 2014-01-22 23:35:48 +0000
+
+
+Started GET "/assets/main.css?body=1" for 71.83.13.240 at 2014-01-22 23:35:48 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 71.83.13.240 at 2014-01-22 23:35:48 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 71.83.13.240 at 2014-01-22 23:35:48 +0000
+
+
+Started GET "/assets/trailers.js?body=1" for 71.83.13.240 at 2014-01-22 23:35:48 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 71.83.13.240 at 2014-01-22 23:35:48 +0000
+
+
+Started GET "/assets/main.js?body=1" for 71.83.13.240 at 2014-01-22 23:35:48 +0000
+
+
+Started GET "/assets/application.js?body=1" for 71.83.13.240 at 2014-01-22 23:35:48 +0000
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-22 23:35:56 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2685ms
+
+NameError (undefined local variable or method `videos' for #<MainController:0x00000003fe7f60>):
+  app/controllers/main_controller.rb:13:in `block (2 levels) in index'
+  app/controllers/main_controller.rb:12:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (69.5ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-22 23:36:43 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2781ms
+
+NameError (undefined local variable or method `video_new' for #<MainController:0x00000003dc56d8>):
+  app/controllers/main_controller.rb:13:in `block (2 levels) in index'
+  app/controllers/main_controller.rb:12:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (27.4ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-22 23:37:00 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2711ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-22 23:37:54 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2774ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-22 23:40:57 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 3071ms
+
+NoMethodError (undefined method `+' for #<Hash:0x00000004073560>):
+  app/controllers/main_controller.rb:12:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.8ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-22 23:42:46 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 3529ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-22 23:46:45 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2849ms
+
+NameError (undefined local variable or method `merged' for #<MainController:0x00000003c08ed0>):
+  app/controllers/main_controller.rb:13:in `block in index'
+  app/controllers/main_controller.rb:13:in `each'
+  app/controllers/main_controller.rb:13:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (27.2ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-22 23:46:59 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 3129ms
+
+TypeError (no implicit conversion of Array into Hash):
+  app/controllers/main_controller.rb:13:in `merge!'
+  app/controllers/main_controller.rb:13:in `block in index'
+  app/controllers/main_controller.rb:13:in `each'
+  app/controllers/main_controller.rb:13:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (49.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (78.2ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-22 23:50:34 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 3255ms
+
+NameError (undefined local variable or method `record_id' for #<MainController:0x00000003e58fa0>):
+  app/controllers/main_controller.rb:15:in `block in index'
+  app/controllers/main_controller.rb:13:in `each'
+  app/controllers/main_controller.rb:13:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (26.2ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-22 23:50:54 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 3251ms
+
+NoMethodError (undefined method `nodes' for #<Array:0x00000004148a80>):
+  app/controllers/main_controller.rb:15:in `block in index'
+  app/controllers/main_controller.rb:13:in `each'
+  app/controllers/main_controller.rb:13:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.7ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-22 23:51:55 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2770ms
+
+NameError (undefined local variable or method `nodes' for #<MainController:0x00000003feef40>):
+  app/controllers/main_controller.rb:13:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.5ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-22 23:53:27 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 4645ms
+
+TypeError (no implicit conversion of String into Integer):
+  app/controllers/main_controller.rb:13:in `[]'
+  app/controllers/main_controller.rb:13:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.8ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-22 23:54:35 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2693ms
+
+TypeError (no implicit conversion of String into Integer):
+  app/controllers/main_controller.rb:13:in `[]'
+  app/controllers/main_controller.rb:13:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.1ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-22 23:56:18 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2776ms
+
+NoMethodError (undefined method `nid' for #<Hash:0x0000000419b960>):
+  app/controllers/main_controller.rb:15:in `block in index'
+  app/controllers/main_controller.rb:13:in `each'
+  app/controllers/main_controller.rb:13:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (27.3ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-22 23:56:50 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2690ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-22 23:57:26 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2978ms
+
+NoMethodError (undefined method `each' for nil:NilClass):
+  app/controllers/main_controller.rb:13:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.6ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-22 23:59:21 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 3074ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:00:52 +0000
+
+SyntaxError (/home/action/trailer-tank/app/controllers/main_controller.rb:21: syntax error, unexpected '=', expecting =>
+        :record_id = record_id["nid"]
+                    ^
+/home/action/trailer-tank/app/controllers/main_controller.rb:22: syntax error, unexpected '}', expecting keyword_end
+/home/action/trailer-tank/app/controllers/main_controller.rb:44: syntax error, unexpected end-of-input, expecting keyword_end):
+  activesupport (4.0.0) lib/active_support/dependencies.rb:423:in `load'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:423:in `block in load_file'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:615:in `new_constants_in'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:422:in `load_file'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:323:in `require_or_load'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:462:in `load_missing_constant'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:183:in `const_missing'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:226:in `const_get'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:226:in `block in constantize'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:224:in `each'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:224:in `inject'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:224:in `constantize'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:534:in `get'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:565:in `constantize'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:655:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.0) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:373:in `_run__2369440921971663091__call__callbacks'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/action/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/action/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/action/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (26.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:01:05 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2812ms
+
+TypeError (no implicit conversion of String into Integer):
+  app/controllers/main_controller.rb:19:in `[]'
+  app/controllers/main_controller.rb:19:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:01:59 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 3642ms
+
+NoMethodError (undefined method `node' for #<Array:0x00000004166800>):
+  app/controllers/main_controller.rb:19:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.6ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:02:50 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2762ms
+
+TypeError (no implicit conversion of String into Integer):
+  app/controllers/main_controller.rb:19:in `[]'
+  app/controllers/main_controller.rb:19:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.4ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:04:22 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2982ms
+
+TypeError (no implicit conversion of String into Integer):
+  app/controllers/main_controller.rb:13:in `[]'
+  app/controllers/main_controller.rb:13:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.1ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:06:05 +0000
+
+SyntaxError (/home/action/trailer-tank/app/controllers/main_controller.rb:13: syntax error, unexpected keyword_do_block, expecting keyword_end
+    @all_videos = videos_tcff["nodes"].each["node"] do |video|
+                                                      ^
+/home/action/trailer-tank/app/controllers/main_controller.rb:39: syntax error, unexpected keyword_end, expecting end-of-input):
+  activesupport (4.0.0) lib/active_support/dependencies.rb:423:in `load'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:423:in `block in load_file'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:615:in `new_constants_in'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:422:in `load_file'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:323:in `require_or_load'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:462:in `load_missing_constant'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:183:in `const_missing'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:226:in `const_get'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:226:in `block in constantize'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:224:in `each'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:224:in `inject'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:224:in `constantize'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:534:in `get'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:565:in `constantize'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:655:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.0) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:373:in `_run__2369440921971663091__call__callbacks'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/action/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/action/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/action/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.2ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.9ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (29.3ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:06:33 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2829ms
+
+NoMethodError (undefined method `all' for #<Array:0x000000037bfd60>):
+  app/controllers/main_controller.rb:13:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.5ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:08:02 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 3868ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:09:23 +0000
+
+SyntaxError (/home/action/trailer-tank/app/controllers/main_controller.rb:19: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+    @all_videos = @prep_videos["node"] each do |video|
+                                           ^):
+  activesupport (4.0.0) lib/active_support/dependencies.rb:423:in `load'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:423:in `block in load_file'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:615:in `new_constants_in'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:422:in `load_file'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:323:in `require_or_load'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:462:in `load_missing_constant'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:183:in `const_missing'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:226:in `const_get'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:226:in `block in constantize'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:224:in `each'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:224:in `inject'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:224:in `constantize'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:534:in `get'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:565:in `constantize'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:655:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.0) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:373:in `_run__2369440921971663091__call__callbacks'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/action/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/action/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/action/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.9ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (28.7ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:10:36 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 3123ms
+
+TypeError (no implicit conversion of String into Integer):
+  app/controllers/main_controller.rb:19:in `[]'
+  app/controllers/main_controller.rb:19:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.2ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (26.6ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:10:53 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2801ms (Views: 75.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:11:16 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2746ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:11:40 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2726ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:11:45 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2684ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:18:28 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 3144ms
+
+TypeError (no implicit conversion of String into Integer):
+  app/controllers/main_controller.rb:14:in `[]'
+  app/controllers/main_controller.rb:14:in `block in index'
+  app/controllers/main_controller.rb:13:in `each'
+  app/controllers/main_controller.rb:13:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.1ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:19:05 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2740ms
+
+TypeError (no implicit conversion of String into Integer):
+  app/controllers/main_controller.rb:14:in `[]'
+  app/controllers/main_controller.rb:14:in `block in index'
+  app/controllers/main_controller.rb:13:in `each'
+  app/controllers/main_controller.rb:13:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.6ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:21:47 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2805ms
+
+TypeError (no implicit conversion of String into Integer):
+  app/controllers/main_controller.rb:15:in `[]'
+  app/controllers/main_controller.rb:15:in `block in index'
+  app/controllers/main_controller.rb:13:in `each'
+  app/controllers/main_controller.rb:13:in `map'
+  app/controllers/main_controller.rb:13:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.9ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:22:16 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2954ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:25:11 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2894ms
+
+NameError (undefined local variable or method `q' for #<MainController:0x000000041c39d8>):
+  app/controllers/main_controller.rb:20:in `block in index'
+  app/controllers/main_controller.rb:19:in `each'
+  app/controllers/main_controller.rb:19:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.8ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:25:27 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2832ms
+
+TypeError (no implicit conversion of String into Integer):
+  app/controllers/main_controller.rb:22:in `[]'
+  app/controllers/main_controller.rb:22:in `block (2 levels) in index'
+  app/controllers/main_controller.rb:21:in `each'
+  app/controllers/main_controller.rb:21:in `block in index'
+  app/controllers/main_controller.rb:19:in `each'
+  app/controllers/main_controller.rb:19:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.2ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:26:58 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2679ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:27:18 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 3816ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:27:44 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 3155ms
+
+TypeError (no implicit conversion of Symbol into Integer):
+  app/controllers/main_controller.rb:22:in `[]'
+  app/controllers/main_controller.rb:22:in `block (2 levels) in index'
+  app/controllers/main_controller.rb:21:in `each'
+  app/controllers/main_controller.rb:21:in `block in index'
+  app/controllers/main_controller.rb:19:in `each'
+  app/controllers/main_controller.rb:19:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.5ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:27:59 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 3305ms
+
+TypeError (no implicit conversion of Symbol into Integer):
+  app/controllers/main_controller.rb:22:in `[]'
+  app/controllers/main_controller.rb:22:in `block (2 levels) in index'
+  app/controllers/main_controller.rb:21:in `each'
+  app/controllers/main_controller.rb:21:in `block in index'
+  app/controllers/main_controller.rb:19:in `each'
+  app/controllers/main_controller.rb:19:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.8ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:30:55 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 3649ms
+
+TypeError (no implicit conversion of String into Integer):
+  app/controllers/main_controller.rb:13:in `[]'
+  app/controllers/main_controller.rb:13:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.2ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:38:26 +0000
+
+SyntaxError (/home/action/trailer-tank/app/controllers/main_controller.rb:40: syntax error, unexpected end-of-input, expecting keyword_end):
+  activesupport (4.0.0) lib/active_support/dependencies.rb:423:in `load'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:423:in `block in load_file'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:615:in `new_constants_in'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:422:in `load_file'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:323:in `require_or_load'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:462:in `load_missing_constant'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:183:in `const_missing'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:226:in `const_get'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:226:in `block in constantize'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:224:in `each'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:224:in `inject'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:224:in `constantize'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:534:in `get'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:565:in `constantize'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:655:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.0) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:373:in `_run__2369440921971663091__call__callbacks'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/action/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/action/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/action/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.1ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:38:39 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 3389ms
+
+TypeError (no implicit conversion of String into Integer):
+  app/controllers/main_controller.rb:16:in `[]'
+  app/controllers/main_controller.rb:16:in `block (2 levels) in index'
+  app/controllers/main_controller.rb:15:in `each'
+  app/controllers/main_controller.rb:15:in `block in index'
+  app/controllers/main_controller.rb:13:in `each'
+  app/controllers/main_controller.rb:13:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.9ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:39:06 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 4528ms
+
+TypeError (no implicit conversion of String into Integer):
+  app/controllers/main_controller.rb:16:in `[]'
+  app/controllers/main_controller.rb:16:in `block (2 levels) in index'
+  app/controllers/main_controller.rb:15:in `each'
+  app/controllers/main_controller.rb:15:in `block in index'
+  app/controllers/main_controller.rb:13:in `each'
+  app/controllers/main_controller.rb:13:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.9ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:39:23 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2731ms
+
+TypeError (no implicit conversion of Symbol into Integer):
+  app/controllers/main_controller.rb:16:in `[]'
+  app/controllers/main_controller.rb:16:in `block (2 levels) in index'
+  app/controllers/main_controller.rb:15:in `each'
+  app/controllers/main_controller.rb:15:in `block in index'
+  app/controllers/main_controller.rb:13:in `each'
+  app/controllers/main_controller.rb:13:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:41:07 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2849ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:41:32 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2932ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:42:09 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2801ms
+
+NoMethodError (undefined method `each' for nil:NilClass):
+  app/controllers/main_controller.rb:15:in `block in index'
+  app/controllers/main_controller.rb:13:in `each'
+  app/controllers/main_controller.rb:13:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.5ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:42:34 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 3340ms
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/controllers/main_controller.rb:14:in `block in index'
+  app/controllers/main_controller.rb:13:in `each'
+  app/controllers/main_controller.rb:13:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.1ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.2ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:44:54 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2841ms
+
+NoMethodError (undefined method `nodes' for #<Hash:0x00000004073a38>):
+  app/controllers/main_controller.rb:13:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:45:44 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 4274ms
+
+TypeError (no implicit conversion of String into Integer):
+  app/controllers/main_controller.rb:14:in `[]'
+  app/controllers/main_controller.rb:14:in `block in index'
+  app/controllers/main_controller.rb:13:in `each'
+  app/controllers/main_controller.rb:13:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (70.6ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:46:13 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2702ms
+
+TypeError (no implicit conversion of String into Integer):
+  app/controllers/main_controller.rb:14:in `[]'
+  app/controllers/main_controller.rb:14:in `block in index'
+  app/controllers/main_controller.rb:13:in `each'
+  app/controllers/main_controller.rb:13:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:47:47 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2779ms
+
+NoMethodError (undefined method `nodes' for #<Hash:0x00000004119aa0>):
+  app/controllers/main_controller.rb:13:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.5ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:48:43 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 4264ms
+
+TypeError (no implicit conversion of StringIO into String):
+  app/controllers/main_controller.rb:12:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.4ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:50:28 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 3131ms
+
+TypeError (no implicit conversion of String into Integer):
+  app/controllers/main_controller.rb:14:in `[]'
+  app/controllers/main_controller.rb:14:in `block in index'
+  app/controllers/main_controller.rb:13:in `each'
+  app/controllers/main_controller.rb:13:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.1ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:51:45 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2877ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:52:21 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2764ms
+
+TypeError (no implicit conversion of String into Integer):
+  app/controllers/main_controller.rb:14:in `[]'
+  app/controllers/main_controller.rb:14:in `block in index'
+  app/controllers/main_controller.rb:13:in `each'
+  app/controllers/main_controller.rb:13:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.1ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:55:36 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 3801ms
+
+TypeError (no implicit conversion of String into Integer):
+  app/controllers/main_controller.rb:14:in `values_at'
+  app/controllers/main_controller.rb:14:in `block in index'
+  app/controllers/main_controller.rb:13:in `each'
+  app/controllers/main_controller.rb:13:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.6ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:57:00 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 3420ms
+
+TypeError (no implicit conversion of String into Integer):
+  app/controllers/main_controller.rb:13:in `[]'
+  app/controllers/main_controller.rb:13:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.9ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (70.6ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:57:21 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 3544ms
+
+TypeError (no implicit conversion of String into Integer):
+  app/controllers/main_controller.rb:13:in `[]'
+  app/controllers/main_controller.rb:13:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.9ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:57:56 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2777ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:58:17 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 4117ms (Views: 50.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 00:59:31 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 3019ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:00:59 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2686ms
+
+TypeError (no implicit conversion of String into Integer):
+  app/controllers/main_controller.rb:14:in `[]'
+  app/controllers/main_controller.rb:14:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:01:22 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2859ms
+
+TypeError (no implicit conversion of String into Integer):
+  app/controllers/main_controller.rb:15:in `[]'
+  app/controllers/main_controller.rb:15:in `block in index'
+  app/controllers/main_controller.rb:14:in `each'
+  app/controllers/main_controller.rb:14:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.1ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (28.6ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:04:15 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2775ms
+
+TypeError (no implicit conversion of String into Integer):
+  app/controllers/main_controller.rb:15:in `[]'
+  app/controllers/main_controller.rb:15:in `block in index'
+  app/controllers/main_controller.rb:14:in `each'
+  app/controllers/main_controller.rb:14:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (26.4ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:04:32 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2846ms
+
+TypeError (no implicit conversion of String into Integer):
+  app/controllers/main_controller.rb:15:in `[]'
+  app/controllers/main_controller.rb:15:in `block in index'
+  app/controllers/main_controller.rb:14:in `each'
+  app/controllers/main_controller.rb:14:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.3ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:04:46 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2748ms
+
+TypeError (no implicit conversion of Symbol into Integer):
+  app/controllers/main_controller.rb:15:in `[]'
+  app/controllers/main_controller.rb:15:in `block in index'
+  app/controllers/main_controller.rb:14:in `each'
+  app/controllers/main_controller.rb:14:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:08:43 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2766ms
+
+TypeError (no implicit conversion of String into Integer):
+  app/controllers/main_controller.rb:13:in `[]'
+  app/controllers/main_controller.rb:13:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (27.5ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:09:30 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2882ms
+
+TypeError (no implicit conversion of String into Integer):
+  app/controllers/main_controller.rb:14:in `[]'
+  app/controllers/main_controller.rb:14:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (44.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (67.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:09:50 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2749ms
+
+TypeError (no implicit conversion of String into Integer):
+  app/controllers/main_controller.rb:14:in `[]'
+  app/controllers/main_controller.rb:14:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.6ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:10:53 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2748ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:12:04 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2842ms
+
+TypeError (no implicit conversion of String into Integer):
+  app/controllers/main_controller.rb:15:in `[]'
+  app/controllers/main_controller.rb:15:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.1ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:12:46 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2884ms
+
+TypeError (no implicit conversion of String into Integer):
+  app/controllers/main_controller.rb:15:in `[]'
+  app/controllers/main_controller.rb:15:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:15:33 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2862ms
+
+NameError (undefined local variable or method `z' for #<MainController:0x0000000410e7e0>):
+  app/controllers/main_controller.rb:15:in `block in index'
+  app/controllers/main_controller.rb:13:in `map'
+  app/controllers/main_controller.rb:13:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (82.8ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:15:47 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2667ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:18:10 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2786ms
+
+TypeError (no implicit conversion of String into Integer):
+  app/controllers/main_controller.rb:22:in `[]'
+  app/controllers/main_controller.rb:22:in `block (2 levels) in index'
+  app/controllers/main_controller.rb:21:in `each'
+  app/controllers/main_controller.rb:21:in `block in index'
+  app/controllers/main_controller.rb:19:in `each'
+  app/controllers/main_controller.rb:19:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.7ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.8ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:18:48 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2730ms
+
+NoMethodError (undefined method `value_at' for ["nid", "33635"]:Array):
+  app/controllers/main_controller.rb:22:in `block (2 levels) in index'
+  app/controllers/main_controller.rb:21:in `each'
+  app/controllers/main_controller.rb:21:in `block in index'
+  app/controllers/main_controller.rb:19:in `each'
+  app/controllers/main_controller.rb:19:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.1ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:25:58 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2748ms
+
+TypeError (no implicit conversion of Symbol into Integer):
+  app/controllers/main_controller.rb:22:in `[]'
+  app/controllers/main_controller.rb:22:in `block (2 levels) in index'
+  app/controllers/main_controller.rb:21:in `each'
+  app/controllers/main_controller.rb:21:in `block in index'
+  app/controllers/main_controller.rb:19:in `each'
+  app/controllers/main_controller.rb:19:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.6ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:28:14 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2920ms
+
+TypeError (no implicit conversion of Symbol into Integer):
+  app/controllers/main_controller.rb:19:in `[]'
+  app/controllers/main_controller.rb:19:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (50.0ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (75.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:28:31 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2689ms
+
+TypeError (no implicit conversion of String into Integer):
+  app/controllers/main_controller.rb:19:in `[]'
+  app/controllers/main_controller.rb:19:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.1ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.6ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:29:31 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2821ms
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/controllers/main_controller.rb:21:in `block in index'
+  app/controllers/main_controller.rb:19:in `map'
+  app/controllers/main_controller.rb:19:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.5ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:29:57 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2760ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:30:14 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2907ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:30:45 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 3873ms
+
+NoMethodError (undefined method `value_at' for nil:NilClass):
+  app/controllers/main_controller.rb:21:in `block in index'
+  app/controllers/main_controller.rb:19:in `map'
+  app/controllers/main_controller.rb:19:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.5ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:31:05 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2810ms
+
+NoMethodError (undefined method `value_at' for #<Hash:0x000000041f2d78>):
+  app/controllers/main_controller.rb:21:in `block in index'
+  app/controllers/main_controller.rb:19:in `map'
+  app/controllers/main_controller.rb:19:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (26.7ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:31:44 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2863ms
+
+NoMethodError (undefined method `value_at' for #<Hash:0x00000003ff2a00>):
+  app/controllers/main_controller.rb:15:in `block in index'
+  app/controllers/main_controller.rb:13:in `map'
+  app/controllers/main_controller.rb:13:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (28.7ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:33:48 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 3000ms
+
+NoMethodError (undefined method `value_at' for ["nid", "33635"]:Array):
+  app/controllers/main_controller.rb:15:in `block in index'
+  app/controllers/main_controller.rb:13:in `each'
+  app/controllers/main_controller.rb:13:in `map'
+  app/controllers/main_controller.rb:13:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (30.8ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:34:12 +0000
+
+SyntaxError (/home/action/trailer-tank/app/controllers/main_controller.rb:15: syntax error, unexpected '[', expecting '('
+        :nodes => x.['nid'].to_s
+                     ^
+/home/action/trailer-tank/app/controllers/main_controller.rb:15: syntax error, unexpected ']', expecting keyword_end
+        :nodes => x.['nid'].to_s
+                           ^
+/home/action/trailer-tank/app/controllers/main_controller.rb:42: syntax error, unexpected end-of-input, expecting keyword_end):
+  activesupport (4.0.0) lib/active_support/dependencies.rb:423:in `load'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:423:in `block in load_file'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:615:in `new_constants_in'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:422:in `load_file'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:323:in `require_or_load'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:462:in `load_missing_constant'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:183:in `const_missing'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:226:in `const_get'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:226:in `block in constantize'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:224:in `each'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:224:in `inject'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:224:in `constantize'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:534:in `get'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:565:in `constantize'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:655:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.0) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:373:in `_run__2369440921971663091__call__callbacks'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/action/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/action/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/action/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (77.5ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:34:27 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 3852ms
+
+TypeError (no implicit conversion of String into Integer):
+  app/controllers/main_controller.rb:15:in `[]'
+  app/controllers/main_controller.rb:15:in `block in index'
+  app/controllers/main_controller.rb:13:in `each'
+  app/controllers/main_controller.rb:13:in `map'
+  app/controllers/main_controller.rb:13:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.8ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:35:01 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 4120ms
+
+NoMethodError (undefined method `value_at' for ["nid", "22557"]:Array):
+  app/controllers/main_controller.rb:15:in `block in index'
+  app/controllers/main_controller.rb:13:in `each'
+  app/controllers/main_controller.rb:13:in `map'
+  app/controllers/main_controller.rb:13:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (26.9ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:37:29 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 3397ms
+
+TypeError (no implicit conversion of String into Integer):
+  app/controllers/main_controller.rb:15:in `fetch'
+  app/controllers/main_controller.rb:15:in `block in index'
+  app/controllers/main_controller.rb:13:in `each'
+  app/controllers/main_controller.rb:13:in `map'
+  app/controllers/main_controller.rb:13:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.8ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:38:12 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2812ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:39:22 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2776ms
+
+TypeError (no implicit conversion of String into Integer):
+  app/controllers/main_controller.rb:13:in `fetch'
+  app/controllers/main_controller.rb:13:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.5ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:40:56 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2764ms
+
+NoMethodError (undefined method `nid' for ["nid", "22557"]:Array):
+  app/controllers/main_controller.rb:15:in `block in index'
+  app/controllers/main_controller.rb:14:in `each'
+  app/controllers/main_controller.rb:14:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.7ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:41:16 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2745ms
+
+TypeError (no implicit conversion of String into Integer):
+  app/controllers/main_controller.rb:15:in `[]'
+  app/controllers/main_controller.rb:15:in `block in index'
+  app/controllers/main_controller.rb:14:in `each'
+  app/controllers/main_controller.rb:14:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.4ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:41:40 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 3551ms
+
+TypeError (no implicit conversion of String into Integer):
+  app/controllers/main_controller.rb:15:in `fetch'
+  app/controllers/main_controller.rb:15:in `block in index'
+  app/controllers/main_controller.rb:14:in `each'
+  app/controllers/main_controller.rb:14:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (80.3ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:44:11 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 4122ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:44:27 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 3493ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:44:53 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2844ms
+
+TypeError (no implicit conversion of String into Integer):
+  app/controllers/main_controller.rb:14:in `[]'
+  app/controllers/main_controller.rb:14:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.1ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (29.4ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:46:13 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2531ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:48:02 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2778ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:48:44 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2983ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:49:11 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2854ms
+
+NoMethodError (undefined method `value_at' for #<Hash:0x00000003608030>):
+  app/controllers/main_controller.rb:15:in `block in index'
+  app/controllers/main_controller.rb:13:in `each'
+  app/controllers/main_controller.rb:13:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:49:36 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 3375ms
+
+ArgumentError (wrong number of arguments (0 for 1..2)):
+  app/controllers/main_controller.rb:15:in `fetch'
+  app/controllers/main_controller.rb:15:in `block in index'
+  app/controllers/main_controller.rb:13:in `each'
+  app/controllers/main_controller.rb:13:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.4ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:51:14 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2798ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:51:53 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2729ms
+
+ArgumentError (wrong number of arguments (0 for 1)):
+  app/controllers/main_controller.rb:15:in `[]'
+  app/controllers/main_controller.rb:15:in `block in index'
+  app/controllers/main_controller.rb:13:in `each'
+  app/controllers/main_controller.rb:13:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.1ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (26.4ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:52:06 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2831ms
+
+ArgumentError (wrong number of arguments (0 for 1)):
+  app/controllers/main_controller.rb:15:in `[]'
+  app/controllers/main_controller.rb:15:in `block in index'
+  app/controllers/main_controller.rb:13:in `each'
+  app/controllers/main_controller.rb:13:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.6ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:52:17 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2824ms (Views: 53.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:52:37 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2785ms
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/controllers/main_controller.rb:15:in `block in index'
+  app/controllers/main_controller.rb:13:in `each'
+  app/controllers/main_controller.rb:13:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:55:35 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2780ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:55:57 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2726ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 71.83.13.240 at 2014-01-23 01:56:37 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2701ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 96.42.149.241 at 2014-01-23 04:52:47 +0000
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 2874ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 96.42.149.241 at 2014-01-23 04:52:50 +0000
+
+
+Started GET "/assets/main.css?body=1" for 96.42.149.241 at 2014-01-23 04:52:50 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 96.42.149.241 at 2014-01-23 04:52:50 +0000
+
+
+Started GET "/assets/trailers.css?body=1" for 96.42.149.241 at 2014-01-23 04:52:50 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 96.42.149.241 at 2014-01-23 04:52:50 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 96.42.149.241 at 2014-01-23 04:52:50 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 96.42.149.241 at 2014-01-23 04:52:50 +0000
+
+
+Started GET "/assets/main.js?body=1" for 96.42.149.241 at 2014-01-23 04:52:50 +0000
+
+
+Started GET "/assets/trailers.js?body=1" for 96.42.149.241 at 2014-01-23 04:52:50 +0000
+
+
+Started GET "/assets/application.js?body=1" for 96.42.149.241 at 2014-01-23 04:52:50 +0000
+
+
+Started GET "/main/index.json" for 96.42.149.241 at 2014-01-23 04:53:00 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 3365ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 96.42.149.241 at 2014-01-23 05:01:05 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2781ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 96.42.149.241 at 2014-01-23 05:02:51 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2743ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 96.42.149.241 at 2014-01-23 05:03:25 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 3656ms
+
+NoMethodError (undefined method `+@' for #<Array:0x00000002739b58>):
+  app/controllers/main_controller.rb:13:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.1ms)
+
+
+Started GET "/main/index.json" for 96.42.149.241 at 2014-01-23 05:04:34 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2759ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 96.42.149.241 at 2014-01-23 05:33:54 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 4094ms
+
+NoMethodError (undefined method `size' for nil:NilClass):
+  app/controllers/main_controller.rb:21:in `block (2 levels) in index'
+  app/controllers/main_controller.rb:20:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (29.6ms)
+
+
+Started GET "/main/index.json" for 96.42.149.241 at 2014-01-23 05:34:11 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 3826ms
+
+NoMethodError (undefined method `count' for nil:NilClass):
+  app/controllers/main_controller.rb:21:in `block (2 levels) in index'
+  app/controllers/main_controller.rb:20:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.2ms)
+
+
+Started GET "/main/index.json" for 96.42.149.241 at 2014-01-23 05:35:38 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2683ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 96.42.149.241 at 2014-01-23 05:36:02 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2731ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 96.42.149.241 at 2014-01-23 05:37:28 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2819ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 96.42.149.241 at 2014-01-23 05:37:49 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2706ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 96.42.149.241 at 2014-01-23 05:38:07 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2739ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 96.42.149.241 at 2014-01-23 05:39:33 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2742ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 96.42.149.241 at 2014-01-23 05:39:52 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 3066ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 96.42.149.241 at 2014-01-23 05:40:43 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2815ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 96.42.149.241 at 2014-01-23 05:40:59 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2662ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 96.42.149.241 at 2014-01-23 05:43:39 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 4591ms
+
+NameError (undefined local variable or method `count' for #<MainController:0x000000041af6e0>):
+  app/controllers/main_controller.rb:15:in `block in index'
+  app/controllers/main_controller.rb:14:in `each'
+  app/controllers/main_controller.rb:14:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (30.2ms)
+
+
+Started GET "/main/index.json" for 96.42.149.241 at 2014-01-23 05:44:02 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 4966ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 96.42.149.241 at 2014-01-23 05:58:18 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 3140ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 96.42.149.241 at 2014-01-23 05:59:24 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2747ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 96.42.149.241 at 2014-01-23 06:00:44 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 3508ms
+
+NameError (undefined local variable or method `x' for #<MainController:0x0000000409b8d0>):
+  app/controllers/main_controller.rb:23:in `block in index'
+  app/controllers/main_controller.rb:21:in `each'
+  app/controllers/main_controller.rb:21:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (72.4ms)
+
+
+Started GET "/main/index.json" for 96.42.149.241 at 2014-01-23 06:01:55 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2745ms
+
+NameError (undefined local variable or method `records_ids' for #<MainController:0x00000003e0dca8>):
+  app/controllers/main_controller.rb:21:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (26.4ms)
+
+
+Started GET "/main/index.json" for 96.42.149.241 at 2014-01-23 06:02:16 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2840ms
+
+NameError (undefined local variable or method `records_ids' for #<MainController:0x000000041186f0>):
+  app/controllers/main_controller.rb:21:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (26.4ms)
+
+
+Started GET "/main/index.json" for 96.42.149.241 at 2014-01-23 06:02:23 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2729ms
+
+NameError (undefined local variable or method `records_ids' for #<MainController:0x00000003e9d6f0>):
+  app/controllers/main_controller.rb:21:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (26.6ms)
+
+
+Started GET "/main/index.json" for 96.42.149.241 at 2014-01-23 06:02:39 +0000
+Processing by MainController#index as JSON
+Completed 500 Internal Server Error in 2730ms
+
+NameError (undefined local variable or method `records_ids' for #<MainController:0x0000000409ec10>):
+  app/controllers/main_controller.rb:21:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (27.6ms)
+
+
+Started GET "/main/index.json" for 96.42.149.241 at 2014-01-23 06:02:55 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2711ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 96.42.149.241 at 2014-01-23 06:03:22 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2775ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 96.42.149.241 at 2014-01-23 06:03:48 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2696ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 96.42.149.241 at 2014-01-23 06:04:33 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2728ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 96.42.149.241 at 2014-01-23 06:05:19 +0000
+
+SyntaxError (/home/action/trailer-tank/app/controllers/main_controller.rb:45: syntax error, unexpected keyword_end, expecting end-of-input):
+  activesupport (4.0.0) lib/active_support/dependencies.rb:423:in `load'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:423:in `block in load_file'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:615:in `new_constants_in'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:422:in `load_file'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:323:in `require_or_load'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:462:in `load_missing_constant'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:183:in `const_missing'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:226:in `const_get'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:226:in `block in constantize'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:224:in `each'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:224:in `inject'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:224:in `constantize'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:534:in `get'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:565:in `constantize'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:655:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.0) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:373:in `_run__2369440921971663091__call__callbacks'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/action/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/action/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/action/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (26.7ms)
+
+
+Started GET "/" for 96.42.149.241 at 2014-01-23 06:05:22 +0000
+
+SyntaxError (/home/action/trailer-tank/app/controllers/main_controller.rb:45: syntax error, unexpected keyword_end, expecting end-of-input):
+  activesupport (4.0.0) lib/active_support/dependencies.rb:423:in `load'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:423:in `block in load_file'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:615:in `new_constants_in'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:422:in `load_file'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:323:in `require_or_load'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:462:in `load_missing_constant'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:183:in `const_missing'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:226:in `const_get'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:226:in `block in constantize'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:224:in `each'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:224:in `inject'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:224:in `constantize'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:534:in `get'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:565:in `constantize'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:655:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.0) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:373:in `_run__2369440921971663091__call__callbacks'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/action/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/action/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/action/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.9ms)
+
+
+Started GET "/" for 96.42.149.241 at 2014-01-23 06:05:48 +0000
+Processing by MainController#index as HTML
+Completed 500 Internal Server Error in 2864ms
+
+NameError (undefined local variable or method `x' for #<MainController:0x00000002618418>):
+  app/controllers/main_controller.rb:23:in `block in index'
+  app/controllers/main_controller.rb:21:in `each'
+  app/controllers/main_controller.rb:21:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (27.4ms)
+
+
+Started GET "/" for 96.42.149.241 at 2014-01-23 06:06:06 +0000
+
+SyntaxError (/home/action/trailer-tank/app/controllers/main_controller.rb:23: syntax error, unexpected =>, expecting keyword_end
+        :img => 'iam.'+ x + '.jpg'
+               ^):
+  activesupport (4.0.0) lib/active_support/dependencies.rb:423:in `load'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:423:in `block in load_file'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:615:in `new_constants_in'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:422:in `load_file'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:323:in `require_or_load'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:462:in `load_missing_constant'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:183:in `const_missing'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:226:in `const_get'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:226:in `block in constantize'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:224:in `each'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:224:in `inject'
+  activesupport (4.0.0) lib/active_support/inflector/methods.rb:224:in `constantize'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:534:in `get'
+  activesupport (4.0.0) lib/active_support/dependencies.rb:565:in `constantize'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:655:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.0) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:373:in `_run__2369440921971663091__call__callbacks'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/action/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/action/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/action/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (27.7ms)
+
+
+Started GET "/" for 96.42.149.241 at 2014-01-23 06:06:23 +0000
+Processing by MainController#index as HTML
+Completed 500 Internal Server Error in 2779ms
+
+NameError (undefined local variable or method `x' for #<MainController:0x0000000415a1e0>):
+  app/controllers/main_controller.rb:23:in `block in index'
+  app/controllers/main_controller.rb:21:in `each'
+  app/controllers/main_controller.rb:21:in `index'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (26.6ms)
+
+
+Started GET "/" for 96.42.149.241 at 2014-01-23 06:06:43 +0000
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4426ms (Views: 7.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 96.42.149.241 at 2014-01-23 06:06:48 +0000
+
+
+Started GET "/assets/main.css?body=1" for 96.42.149.241 at 2014-01-23 06:06:48 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 96.42.149.241 at 2014-01-23 06:06:48 +0000
+
+
+Started GET "/assets/trailers.css?body=1" for 96.42.149.241 at 2014-01-23 06:06:48 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 96.42.149.241 at 2014-01-23 06:06:48 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 96.42.149.241 at 2014-01-23 06:06:48 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 96.42.149.241 at 2014-01-23 06:06:48 +0000
+
+
+Started GET "/assets/main.js?body=1" for 96.42.149.241 at 2014-01-23 06:06:48 +0000
+
+
+Started GET "/assets/trailers.js?body=1" for 96.42.149.241 at 2014-01-23 06:06:48 +0000
+
+
+Started GET "/assets/application.js?body=1" for 96.42.149.241 at 2014-01-23 06:06:48 +0000
+
+
+Started GET "/main/index.json" for 96.42.149.241 at 2014-01-23 06:06:54 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 4369ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 96.42.149.241 at 2014-01-23 06:08:09 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2707ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 96.42.149.241 at 2014-01-23 06:08:58 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2846ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/index.json" for 96.42.149.241 at 2014-01-23 06:09:44 +0000
+Processing by MainController#index as JSON
+Completed 200 OK in 2657ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 96.42.149.241 at 2014-01-23 06:22:58 +0000
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 3364ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 96.42.149.241 at 2014-01-23 06:23:01 +0000
+
+
+Started GET "/assets/main.css?body=1" for 96.42.149.241 at 2014-01-23 06:23:01 +0000
+
+
+Started GET "/assets/trailers.css?body=1" for 96.42.149.241 at 2014-01-23 06:23:01 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 96.42.149.241 at 2014-01-23 06:23:01 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 96.42.149.241 at 2014-01-23 06:23:02 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 96.42.149.241 at 2014-01-23 06:23:02 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 96.42.149.241 at 2014-01-23 06:23:02 +0000
+
+
+Started GET "/assets/main.js?body=1" for 96.42.149.241 at 2014-01-23 06:23:02 +0000
+
+
+Started GET "/assets/trailers.js?body=1" for 96.42.149.241 at 2014-01-23 06:23:02 +0000
+
+
+Started GET "/assets/application.js?body=1" for 96.42.149.241 at 2014-01-23 06:23:02 +0000
+
+
+Started GET "/" for 96.42.149.241 at 2014-01-23 06:23:06 +0000
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 2699ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 96.42.149.241 at 2014-01-23 06:23:09 +0000
+
+
+Started GET "/assets/main.css?body=1" for 96.42.149.241 at 2014-01-23 06:23:09 +0000
+
+
+Started GET "/assets/trailers.css?body=1" for 96.42.149.241 at 2014-01-23 06:23:09 +0000
+
+
+Started GET "/assets/main.js?body=1" for 96.42.149.24
