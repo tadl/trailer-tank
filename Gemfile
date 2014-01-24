@@ -11,6 +11,8 @@ gem 'devise'
 gem 'mechanize'
 gem 'nokogiri'
 gem 'json'
+gem 'will_paginate', '~> 3.0'
+gem 'pg_search'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

@@ -7,6 +7,10 @@ TrailerTank::Application.routes.draw do
   get "main/help"
   get "main/about"
   get "main/faq"
+  get "main/update_trailer"
+  get "main/delete_trailer"
+  get "main/search_by_title"
+  get "main/have_trailers"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

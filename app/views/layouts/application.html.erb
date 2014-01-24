@@ -7,7 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <h1> Trailer Tank </h1>
+  <ul>
+    <li><a href="/main/index">Videos that Need Trailers</a></li>
+    <li><a href="/main/have_trailers">Videos that Have Trailers</a></li>
+    <li><a href="/main/leaders">Leader Boards</a></li>
+  </ul>
+<div id="search_div">  
+  Search by Title: <input id="search" type="text">
+  <button onclick="search_by_title()">Search</button>
+  </div>  
 <%= yield %>
 
 </body>
