@@ -8,7 +8,8 @@ class MainController < ApplicationController
   
   def index
     @trailers = Trailer.where(:youtube_url => nil).paginate(:page => params[:page], :per_page => 20)
-    @page_title = "Videos that Need Trailers"
+    @trailers_count = @trailers.count.to_s
+    @page_title = @trailers_count +' Videos Need Trailers'
   end
   
   def search_by_title
@@ -18,7 +19,8 @@ class MainController < ApplicationController
   
   def have_trailers
     @trailers = Trailer.where.not(:youtube_url => nil).paginate(:page => params[:page], :per_page => 20)
-    @page_title = "Videos that Have Trailers"
+    @trailers_count = @trailers.count.to_s
+    @page_title = @trailers_count +' Videos Have Trailers'
   end  
   
   def leaders
