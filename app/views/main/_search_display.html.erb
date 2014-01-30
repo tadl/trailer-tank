@@ -22,7 +22,7 @@
 <div id="trailer_<%= trailer.record_id %>">
 <% if trailer.youtube_url? %>
 <a onclick="show_trailer('<%= CGI.escapeHTML trailer.youtube_url %>')">Show Trailer</a> 
-<% if trailer.user %>  
+<% if trailer.user.username %>  
 - Uploaded By: <%= trailer.user.username %> 
 <% end %>  
 <button onclick="delete_embed('<%= trailer.record_id %>', '<%= CGI.escapeHTML trailer.title %>', '<%= @current_page %>', '<%= @state %>', '<%= trailer.user.username %>')">Delete Trailer</button> 
