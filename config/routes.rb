@@ -18,6 +18,9 @@ TrailerTank::Application.routes.draw do
   get "main/get_trailer"
   get "main/mark_cant_find"
   get "main/cant_find"
+  get "main/action_trailers"
+  
+  get 'messaging' => 'main#action_trailers'
 
   
 

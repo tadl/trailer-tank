@@ -1,4 +1,5 @@
 class MainController < ApplicationController
+  
   respond_to :html, :json
   require 'mechanize'
   require 'nokogiri'
@@ -22,11 +23,11 @@ class MainController < ApplicationController
     else
     @current_page = params[:page]
     end
-      respond_with do |format|
+    respond_with do |format|
       format.js {}
       format.html {}
     end
-  end
+  end  
   
   def cant_find
     @trailers = Trailer.where(:youtube_url => nil, :cant_find => true).paginate(:page => params[:page], :per_page => 10)
@@ -56,7 +57,7 @@ class MainController < ApplicationController
   end
   
   def leaders
-    @users = User.all
+    @users = User.all.order(:score)
   end
 
   def get_trailer
