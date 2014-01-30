@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:google_oauth2]
   attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :provider, :uid, :avatar, :score
-  has_many :trailers
+  has_many :trailers, :through => :user_id, :dependent: :destroy
   before_destroy {|user| user.trailers.clear}
 def self.find_for_google_oauth2(access_token, signed_in_resource=nil)
     data = access_token.info
