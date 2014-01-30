@@ -57,7 +57,7 @@ class MainController < ApplicationController
   end
   
   def leaders
-    @users = User.all.order(:score)
+    @users = User.all.order("score DESC")
   end
 
   def get_trailer
@@ -86,9 +86,9 @@ class MainController < ApplicationController
       current_user.save
     end
     t.save!
-    
+    @score = current_user.score
     respond_with do |format|
-      format.json { render :json =>{message: 'done'}
+      format.json { render :json =>{message: @score}
         }
     end
   end

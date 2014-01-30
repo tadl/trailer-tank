@@ -26,7 +26,7 @@
   </div>
     <div id="login_box">
     
-      <p><img src="<%= current_user.avatar %>"><%= current_user.username %>, Score: <%= current_user.score %> (<%= link_to "log out", destroy_user_session_path %>)</p>
+      <p><img src="<%= current_user.avatar %>"><%= current_user.username %>, Score: <span id="score"><%= current_user.score %></span> (<%= link_to "log out", destroy_user_session_path %>)</p>
   </div> 
 </div> 
  

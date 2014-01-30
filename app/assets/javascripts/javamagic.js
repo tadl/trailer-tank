@@ -38,9 +38,13 @@ function check_n_save(data, record_id, title, youtube_id, page, state, current_u
         dataType: "json",
         success: function(data) {
           if (state == 'search' ){ 
+            var score = data.message
             $(trailer_div).html(trailer_code);
             $(edit_div).html('');
+            $('#score').html(score);
           }else{
+            var score = data.message
+            $('#score').html(score);
             refresh_trailers(page, state);
           }
         } 
