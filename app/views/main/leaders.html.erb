@@ -1,6 +1,7 @@
 <h2>Leader Board</h2>
 <% @users.each do |user| %>
-<img src="<%= user.avatar %>" style="max-width: 60px;">
-<%= user.username %> <p>Score: <%= user.score %></p>
-</br>
+<div class="user_list_item">
+  <img src="<%= user.avatar %>" style="max-width: 60px; float: left;">
+<%= user.username %> Score: <%= user.score %>
+</div>
 <% end %>

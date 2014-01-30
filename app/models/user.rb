@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:google_oauth2]
   attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :provider, :uid, :avatar, :score
   has_many :trailers
+  before_destroy {|user| user.trailers.clear}
 def self.find_for_google_oauth2(access_token, signed_in_resource=nil)
     data = access_token.info
     extra = access_token.extra.raw_info

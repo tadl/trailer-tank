@@ -2,16 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#nav_list{
- float:left;
- margin-left: 15px;
+
+
+a {
+  color: #fff;
+  &:visited {
+    color: #fff;
+  }
+  &:hover {
+    color: #000;
+    background-color: #fff;
+  }
 }
 
-#nav_list ul{
- float:left;
-}
-
-#nav_list li{
- float:left;
- text-decoration: none;
-}

@@ -99,7 +99,7 @@ function search_by_title(){
 
 function search_youtube(title){
  var clean_title = encodeURIComponent(title); 
- var url ='http://www.youtube.com/results?search_query=' + clean_title;
+ var url ='http://www.youtube.com/results?search_query=' + clean_title +' trailer';
  window.open(url);
 }
 
