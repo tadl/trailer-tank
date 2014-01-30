@@ -4,7 +4,7 @@ $( document ).ready(function() {
     });
 });
 
-function check_for_embed(record_id, title){
+function check_for_embed(record_id, title, page, state, current_user){
  var target_div = '#input_' + record_id;
  var youtube_url = $(target_div).val();
  var youtube_id = youtube_url.replace('http://www.youtube.com/watch?v=','').replace('https://www.youtube.com/watch?v=','');
@@ -14,7 +14,7 @@ function check_for_embed(record_id, title){
         type: 'GET',
         dataType: "json",
         success: function(data) {
-           check_n_save(data, record_id, youtube_id, title);
+           check_n_save(data, record_id, title, youtube_id, page, state, current_user);
         },
    error: function(){
      alert("URL is NO GOOD!");
@@ -23,11 +23,11 @@ function check_for_embed(record_id, title){
   
 }
 
-function check_n_save(data, record_id, youtube_id, title){
+function check_n_save(data, record_id, title, youtube_id, page, state, current_user){
   var test = data.data.accessControl.embed;
   var trailer_div = '#trailer_' + record_id
   var edit_div = '#edit_' + record_id
-  var delete_code = '<button onclick="delete_embed("'+ record_id +'","'+ title +'")">Delete Trailer</button>' 
+  var trailer_code = '<a onclick="show_trailer(\''+ youtube_id +'\')">Show Trailer</a> - Uploaded By: '+ current_user +' <button onclick="delete_embed(\''+ record_id +'\',\''+ title +'\',\''+ page +'\',\''+ state +'\',\''+ current_user +'\')">Delete Trailer</button>' 
   if (test == 'denied'){
     $(message_div).html("This video does not allow embedding. Please try another.");
       }else{
@@ -37,32 +37,54 @@ function check_n_save(data, record_id, youtube_id, title){
         type: 'GET',
         dataType: "json",
         success: function(data) {
-          var embed_code = data['message']; 
-          $(trailer_div).html(embed_code);
-          $(edit_div).html(delete_code)
+          if (state == 'search' ){ 
+            $(trailer_div).html(trailer_code);
+            $(edit_div).html('');
+          }else{
+            refresh_trailers(page, state);
+          }
         } 
         });
       }
 }
 
-function delete_embed(record_id, title){
-  var save_url = '/main/delete_trailer.json?id='+ record_id 
-  var search_code = '<a onclick="search_youtube("'+ title +'")">Search Youtube</a></br>'
-  var edit_code = 'Add Youtube URL: <input id="input_'+ record_id +'" type="text"><button onclick="check_for_embed("'+ record_id +'","'+ title +'")">Submit</button>'
+function delete_embed(record_id, title, page, state, current_user){
+  var delete_url = '/main/delete_trailer.json?id='+ record_id 
+  var search_code = '<a onclick="search_youtube(\''+ title +'\')">Search Youtube</a></br>'
+  var edit_code = 'Add Youtube URL: <input id="input_'+ record_id +'" type="text"><button onclick="check_for_embed(\''+ record_id +'\',\''+ title +'\',\''+ page +'\',\''+ state +'\',\''+ current_user +'\')">Submit</button>'
+  var cant_find_code = '<button onclick="mark_cant_find(\''+ record_id +'\', \''+ page +'\', \''+ state +'\')">Mark As Not Found</button>'
   var trailer_div = '#trailer_' + record_id
   var edit_div = '#edit_' + record_id
+  var not_found_div = '#not_found_' + record_id
   $.ajax({
-    url: save_url,
+    url: delete_url,
     type: 'GET',
     dataType: "json",
     success: function(data) {
-    var embed_code = data['message']; 
     $(edit_div).html(search_code + edit_code);
+    $(not_found_div).html(cant_find_code);  
     $(trailer_div).html('');
     } 
   });  
 }
 
+function mark_cant_find(record_id, page, state){
+  var not_found_div = '#not_found_' + record_id
+  cant_find_url = '/main/mark_cant_find?id='+ record_id
+  $.ajax({
+    url: cant_find_url,
+    type: 'GET',
+    dataType: "json",
+    success: function(data) {
+      if (state == 'search'){
+        $(not_found_div).html('Marked as Not Found');
+      } else {
+        refresh_trailers(page, state);
+      }
+    }
+  });  
+   
+}
 
 function search_by_title(){
  var title = $('#search').val();
@@ -80,3 +102,22 @@ function search_youtube(title){
  var url ='http://www.youtube.com/results?search_query=' + clean_title;
  window.open(url);
 }
+
+function show_trailer(youtube_id){
+ var url ='http://www.youtube.com/watch?v=' + youtube_id;
+ window.open(url);
+}
+
+function refresh_trailers(page, state){
+  if (state == 'queue'){
+  url = "/main/queue.js?page=" + page
+  }else{
+  url = "/main/cant_find.js?page=" + page
+  }
+  $.ajax({
+  type: "GET",
+  url: url,
+  success: function(data){}
+}); 
+}
+

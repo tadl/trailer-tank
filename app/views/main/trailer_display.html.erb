@@ -1,0 +1,32 @@
+<h2><%= @page_title %></h2>
+
+
+<div id="paginate_top">
+  <%= will_paginate @trailers, :params => {:controller => 'main', :action => 'queue', :format => 'html'} %>
+</div>  
+ <% @trailers.each do |trailer| %>
+<img src="http://catalog.tadl.org/opac/extras/ac/jacket/medium/r/<%= trailer.record_id %>" style="float:left; max-width: 125px; margin: 10px;">
+<div id="info_line_one">
+  
+<p>
+  <span style="font-size: 15px;"><%= trailer.title %>,</span> Release Date: <%= trailer.release_date %>, Released By: <%= trailer.publisher %> </p>
+</div>  
+<p>Actor/Director: <%= trailer.artist %> </p>
+<p>Description: <%= truncate trailer.abstract, length: 300 %> </p>
+
+<div id="edit_<%= trailer.record_id %>">
+
+  <a onclick="search_youtube('<%= trailer.title %>')">Search Youtube</a>
+</br>
+  Add Youtube URL: <input id="input_<%= trailer.record_id %>" type="text">
+  <button onclick="check_for_embed('<%= trailer.record_id %>', '<%= @current_page %>')">Submit</button> 
+</div> 
+<div id="error_<%= trailer.record_id %>">  
+</div>
+
+
+<div style="clear: both"></div>
+    <% end %>
+<div id="paginate_bottom">
+<%= will_paginate @trailers, :params => {:controller => 'main', :action => 'queue', :format => 'html'} %>
+</div>  

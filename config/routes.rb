@@ -1,16 +1,26 @@
 TrailerTank::Application.routes.draw do
+  devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }, skip: [:sessions]
+  as :user do
+    get 'sign_in', :to => "main#index", :as => :new_user_session
+    get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
+  end
+  
+  
   resources :trailers
 
   root :to => "main#index" 
   get "main/index"
   get "main/leaders"
-  get "main/help"
-  get "main/about"
-  get "main/faq"
   get "main/update_trailer"
   get "main/delete_trailer"
   get "main/search_by_title"
-  get "main/have_trailers"
+  get "main/queue"
+  get "main/get_trailer"
+  get "main/mark_cant_find"
+  get "main/cant_find"
+
+  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

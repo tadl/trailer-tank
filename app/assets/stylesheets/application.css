@@ -11,3 +11,95 @@
  *= require_self
  *= require_tree .
  */
+
+body {
+ background-color: #000;
+ color: #fff;  
+}
+
+#top {
+ min-width: 960px;
+}
+
+
+
+#nav_bar {
+  padding-top: 0px;
+  margin-left: 0px;
+}
+
+#nav_bar ul
+{
+  padding: 0;
+  list-style-type: none;
+   margin: 0;
+
+  
+}
+
+#nav_bar li  {
+  list-style-type: none;
+  float: left;
+  font-size: 15px;
+  margin-left: 10px;
+  margin-right: 15px;
+  margin-top: 5px;
+  padding-top: 0px;
+  padding-left:0px;
+}
+
+#nav_bar li a  {
+  text-decoration: none;
+}
+
+.banner_text {
+  float: left;
+  margin-top: 5px;
+  margin-left: 0px;
+  padding-left:0px;;
+  padding-top: 0px;
+  font-size: 15px;
+}
+
+#login_box {
+  float: right;
+  margin-left: 0px;
+  padding-left:0px;
+  margin-top: -5px;
+  padding-top: 0px;
+}
+
+#login_box img {
+  float: left;
+  margin-left: 0px;
+  padding-left:0px;
+  margin-top: 0px;
+  padding-top: 0px;
+  margin-right: 10px;
+  max-width: 40px;
+
+}
+
+#login_box p {
+  float: right;
+  font-size: 15px;
+  line-height: 40px;
+  margin: 0px;
+  padding: 0xp;
+  vertical-align:middle;
+}
+
+#search_div {
+  margin-left: 0px;
+  padding-left:0px;
+  margin-top: -2px;
+  padding-top: 0px;
+}
+
+#info_line_one h3 {
+  float:left;
+}
+
+#info_line_one h3 {
+  float:left;
+}

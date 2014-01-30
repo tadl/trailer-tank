@@ -4,57 +4,114 @@ class MainController < ApplicationController
   require 'nokogiri'
   require 'open-uri'
   require 'json'
-  require 'uri'
+  require 'uri'  
   
   def index
-    @trailers = Trailer.where(:youtube_url => nil).paginate(:page => params[:page], :per_page => 20)
+    if current_user != nil
+      redirect_to action: 'queue'
+    end 
+  end
+  
+  def queue
+    @trailers = Trailer.where(:youtube_url => nil, :cant_find => false).paginate(:page => params[:page], :per_page => 10)
     @trailers_count = @trailers.count.to_s
+    @state = 'queue'
     @page_title = @trailers_count +' Videos Need Trailers'
+    if params[:page] == nil
+    @current_page = 1
+    else
+    @current_page = params[:page]
+    end
+      respond_with do |format|
+      format.js {}
+      format.html {}
+    end
+  end
+  
+  def cant_find
+    @trailers = Trailer.where(:youtube_url => nil, :cant_find => true).paginate(:page => params[:page], :per_page => 10)
+    @trailers_count = @trailers.count.to_s
+    @state = 'cant_find'
+    @page_title = @trailers_count +' Videos Need Trailers'
+    if params[:page] == nil
+    @current_page = 1
+    else
+    @current_page = params[:page]
+    end
+      respond_with do |format|
+      format.js {}
+      format.html {}
+    end 
   end
   
   def search_by_title
     @search = URI.unescape(params[:title])
-    @trailers = Trailer.search_title(params[:title]).paginate(:page => params[:page], :per_page => 20)
+    @trailers = Trailer.search_title(params[:title]).paginate(:page => params[:page], :per_page => 10)
+    @state = 'search'
+    if params[:page] == nil
+    @current_page = 1
+    else
+    @current_page = params[:page]
+    end
   end
-  
-  def have_trailers
-    @trailers = Trailer.where.not(:youtube_url => nil).paginate(:page => params[:page], :per_page => 20)
-    @trailers_count = @trailers.count.to_s
-    @page_title = @trailers_count +' Videos Have Trailers'
-  end  
   
   def leaders
+    @users = User.all
   end
 
-  def help
-  end
-
-  def about
-  end
-
-  def faq
+  def get_trailer
+    headers['Access-Control-Allow-Origin'] = "*"
+    t = Trailer.find_by_record_id(params[:id])
+    if t && t.youtube_url
+      @message = t.youtube_url
+    else
+      @message = "error"
+    end
+    respond_to do |format|
+      format.json { render :json => { :message => @message }}
+    end 
   end
   
   def update_trailer
     t = Trailer.find_by_record_id(params[:id])
     t.youtube_url = params[:yt]
+    t.user_id = current_user.id
+    if t.cant_find == true
+      current_user.score += 1
+      current_user.save
+      t.cant_find = false
+    else
+      current_user.score += 1
+      current_user.save
+    end
     t.save!
     
-    embed_code = '<iframe width="400" height="225" src="http://www.youtube.com/embed/'+ params[:yt] +'" frameborder="0" allowfullscreen></iframe>'
-    
     respond_with do |format|
-      format.json { render :json =>{message: embed_code}
+      format.json { render :json =>{message: 'done'}
         }
     end
   end
   
   def delete_trailer  
     t = Trailer.find_by_record_id(params[:id])
+    t.user_id = nil
     t.youtube_url = nil
     t.save!
+    current_user.score -= 1
+    current_user.save
     respond_with do |format|
       format.json { render :json =>{message: "done"}}
     end 
-  end  
-
-end
+  end
+  
+  def mark_cant_find
+    t = Trailer.find_by_record_id(params[:id])
+    t.cant_find = true
+    t.user_id = current_user.id
+    t.save
+    respond_with do |format|
+      format.json { render :json =>{message: "done"}}
+    end 
+  end
+  
+end  

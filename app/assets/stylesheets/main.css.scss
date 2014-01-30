@@ -1,3 +1,17 @@
 // Place all the styles related to the main controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#nav_list{
+ float:left;
+ margin-left: 15px;
+}
+
+#nav_list ul{
+ float:left;
+}
+
+#nav_list li{
+ float:left;
+ text-decoration: none;
+}

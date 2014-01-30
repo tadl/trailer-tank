@@ -14,6 +14,11 @@ gem 'json'
 gem 'will_paginate', '~> 3.0'
 gem 'pg_search'
 gem 'newrelic_rpm'
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'protected_attributes'
+gem 'dotenv-rails', :groups => [:development, :test]
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

@@ -7,17 +7,35 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <h1> Trailer Tank </h1>
-  <ul>
-    <li><a href="/main/index">Videos that Need Trailers</a></li>
-    <li><a href="/main/have_trailers">Videos that Have Trailers</a></li>
+      <% if !current_user %>
+   <%= flash[:message] %>
+       <%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2) %>
+      <% else %>
+ <div id="top">
+  <div id="nav_bar">
+    <ul>
+    <li><a href="/main/queue">Queue</a></li>
+    <li><a href="/main/cant_find">Not Found List</a></li>  
     <li><a href="/main/leaders">Leader Boards</a></li>
-  </ul>
-<div id="search_div">  
-  Search by Title: <input id="search" type="text">
-  <button onclick="search_by_title()">Search</button>
-  </div>  
+    <li> 
+      <div id="search_div">  Search: <input id="search" type="text">
+      <button onclick="search_by_title()">GO</button>
+      </div> 
+    </li>
+    </ul>
+  </div>
+    <div id="login_box">
+    
+    <p><img src="<%= current_user.avatar %>"><%= current_user.username %> (<%= link_to "log out", destroy_user_session_path %>)</p>
+  </div> 
+  </div> 
+ 
+  
+       <div style="clear: both"></div>  
+ 
+
 <%= yield %>
+  <% end %>
 
 </body>
 </html>

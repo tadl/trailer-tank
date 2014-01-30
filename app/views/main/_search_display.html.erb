@@ -1,0 +1,52 @@
+
+<% if @search %>
+<h2>Searching for: <%= @search %></h2>
+<% end %>
+
+<div id="paginate_top">
+  <% if @state == 'queue' %>
+  <%= will_paginate @trailers, :params => {:controller => 'main', :action => 'queue', :format => 'html'} %>
+  <% else %>
+  <%= will_paginate @trailers %>
+  <% end %>
+</div>  
+ <% @trailers.each do |trailer| %>
+<img src="http://catalog.tadl.org/opac/extras/ac/jacket/medium/r/<%= trailer.record_id %>" style="float:left; max-width: 125px; margin: 10px;">
+<div id="info_line_one">
+  
+<p>
+  <span style="font-size: 15px;"><%= trailer.title %>,</span> Release Date: <%= trailer.release_date %>, Released By: <%= trailer.publisher %> </p>
+</div>  
+<p>Actor/Director: <%= trailer.artist %> </p>
+<p>Description: <%= truncate trailer.abstract, length: 300 %> </p>
+<div id="trailer_<%= trailer.record_id %>">
+<% if trailer.youtube_url? %>
+<a onclick="show_trailer('<%= trailer.youtube_url %>')">Show Trailer</a> - Uploaded By: <%= trailer.user.username %>  
+<button onclick="delete_embed('<%= trailer.record_id %>', '<%= CGI.escapeHTML trailer.title %>', '<%= @current_page %>', '<%= @state %>', '<%= trailer.user.username %>')">Delete Trailer</button> 
+<% end %>
+</div>  
+<div id="edit_<%= trailer.record_id %>">
+<% if !trailer.youtube_url %>  
+  <a onclick="search_youtube('<%= trailer.title %>')">Search Youtube</a>
+</br>
+  Add Youtube URL: <input id="input_<%= trailer.record_id %>" type="text">
+  <button onclick="check_for_embed('<%= trailer.record_id %>', '<%= CGI.escapeHTML trailer.title %>', '<%= @current_page %>', '<%= @state %>', '<%= current_user.username %>')">Submit</button>
+<div id="not_found_<%= trailer.record_id %>">
+<% if trailer.cant_find == true %>
+Marked as Not Found  
+<% else %>
+<button onclick="mark_cant_find('<%= trailer.record_id %>', '<%= @current_page %>', '<%= @state %>')">Mark As Not Found</button>
+<% end %>
+</div>  
+<% end %>
+</div> 
+
+<div id="error_<%= trailer.record_id %>">  
+</div>
+
+
+<div style="clear: both"></div>
+    <% end %>
+<div id="paginate_bottom">
+<%= will_paginate @trailers, :params => {:controller => 'main', :action => 'queue', :format => 'html'} %>
+</div>  
