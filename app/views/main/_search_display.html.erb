@@ -23,9 +23,9 @@
 <% if trailer.youtube_url? %>
 <a onclick="show_trailer('<%= CGI.escapeHTML trailer.youtube_url %>')">Show Trailer</a> 
 
-- Uploaded By: 
+- Uploaded By: <%= trailer.user.username %> 
 
-<button onclick="delete_embed('<%= trailer.record_id %>', '<%= CGI.escapeHTML trailer.title %>', '<%= @current_page %>', '<%= @state %>', '')">Delete Trailer</button> 
+<button onclick="delete_embed('<%= trailer.record_id %>', '<%= CGI.escapeHTML trailer.title %>', '<%= @current_page %>', '<%= @state %>', '<%= trailer.user.username %>')">Delete Trailer</button> 
 <% end %>
 </div>  
 <div id="edit_<%= trailer.record_id %>">
@@ -33,7 +33,7 @@
   <a onclick="search_youtube('<%= CGI.escapeHTML trailer.title %>')">Search Youtube</a>
 </br>
   Add Youtube URL: <input id="input_<%= trailer.record_id %>" type="text">
-  <button onclick="check_for_embed('<%= trailer.record_id %>', '<%= CGI.escapeHTML trailer.title %>', '<%= @current_page %>', '<%= @state %>', 'test')">Submit</button>
+  <button onclick="check_for_embed('<%= trailer.record_id %>', '<%= CGI.escapeHTML trailer.title %>', '<%= @current_page %>', '<%= @state %>', '<%= current_user.username %>')">Submit</button>
 <div id="not_found_<%= trailer.record_id %>">
 <% if trailer.cant_find == true %>
 Marked as Not Found  
