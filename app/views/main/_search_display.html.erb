@@ -33,7 +33,7 @@
   <a onclick="search_youtube('<%= CGI.escapeHTML trailer.title %>')">Search Youtube</a>
 </br>
   Add Youtube URL: <input id="input_<%= trailer.record_id %>" type="text">
-  <button onclick="check_for_embed('<%= trailer.record_id %>', '<%= CGI.escapeHTML trailer.title %>', '<%= @current_page %>', '<%= @state %>', '<%= current_user.username %>')">Submit</button>
+  <button onclick="check_for_embed('<%= trailer.record_id %>', '<%= CGI.escapeHTML trailer.title %>', '<%= @current_page %>', '<%= @state %>', 'test')">Submit</button>
 <div id="not_found_<%= trailer.record_id %>">
 <% if trailer.cant_find == true %>
 Marked as Not Found  
