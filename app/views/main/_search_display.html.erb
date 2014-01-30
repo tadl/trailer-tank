@@ -25,7 +25,7 @@
 
 - Uploaded By: 
 
-<button onclick="delete_embed('<%= trailer.record_id %>', '<%= CGI.escapeHTML trailer.title %>', '<%= @current_page %>', '<%= @state %>', '<%= trailer.user.username %>')">Delete Trailer</button> 
+<button onclick="delete_embed('<%= trailer.record_id %>', '<%= CGI.escapeHTML trailer.title %>', '<%= @current_page %>', '<%= @state %>', '')">Delete Trailer</button> 
 <% end %>
 </div>  
 <div id="edit_<%= trailer.record_id %>">
