@@ -7,7 +7,6 @@ gem 'rails', '4.0.0'
 gem 'pg'
 gem 'unicorn'
 gem 'rails_12factor', group: :production
-gem 'devise'
 gem 'mechanize'
 gem 'nokogiri'
 gem 'json'
