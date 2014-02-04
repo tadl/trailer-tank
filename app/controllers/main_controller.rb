@@ -61,7 +61,8 @@ class MainController < ApplicationController
   end
 
   def get_trailer
-    headers['Access-Control-Allow-Origin'] = "*"
+    headers['Access-Control-Allow-Origin'] = '*'
+    headers['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS'
     t = Trailer.find_by_record_id(params[:id])
     if t && t.youtube_url
       @message = t.youtube_url
