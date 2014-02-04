@@ -1,11 +1,11 @@
 class MainController < ApplicationController
-  
-  respond_to :html, :json
   require 'mechanize'
   require 'nokogiri'
   require 'open-uri'
   require 'json'
   require 'uri'  
+  before_action :authenticate_user!, :except => [:index, :get_trailer]
+  respond_to :html, :json
   
   def index
     if current_user != nil
@@ -46,6 +46,7 @@ class MainController < ApplicationController
   end
   
   def search_by_title
+    headers['Access-Control-Allow-Origin'] = "*"
     @search = URI.unescape(params[:title])
     @trailers = Trailer.search_title(params[:title]).paginate(:page => params[:page], :per_page => 10)
     @state = 'search'
@@ -61,8 +62,6 @@ class MainController < ApplicationController
   end
 
   def get_trailer
-    headers['Access-Control-Allow-Origin'] = '*'
-    headers['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS'
     t = Trailer.find_by_record_id(params[:id])
     if t && t.youtube_url
       @message = t.youtube_url
