@@ -10,10 +10,12 @@ def self.find_for_google_oauth2(access_token, signed_in_resource=nil)
     data = access_token.info
     extra = access_token.extra.raw_info
     user = User.where(:email => data["email"]).first
-    
+    user.avatar = data["image"]
+    user.save!
     unless user
       if extra["hd"] == 'tadl.org'
-      user = User.create(username: data["name"],
+      user = User.create(
+             username: data["name"],
              email: data["email"],
              avatar: data["image"],
              password: Devise.friendly_token[0,20],
