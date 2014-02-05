@@ -6,7 +6,7 @@ TrailerTank::Application.routes.draw do
   end
   
   
-  resources :trailers
+
 
   root :to => "main#index" 
   get "main/index"
