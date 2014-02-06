@@ -1,7 +1,11 @@
 <h2>Users</h2>
 <% @users.each do |user| %>
 <div class="user_list_item">
-  <img src="<%= user.avatar %>" style="max-width: 60px; min-width: 60px; float: left;">
+  <% if user.avatar %>
+    <img src="<%= user.avatar %>" style="max-width: 60px; min-width: 60px; float: left;">
+  <% else %>
+    <img src="http://www.insertpuppy.com/60-60-random" style="max-width: 60px; min-width: 60px; float: left;">
+  <% end %>
   <%= user.username %>, Covers Uploaded: <%= user.score %>, Role: <%= user.role %>
   <% if current_user.role == 'admin' %>
     <div id="edit_role_<%= user.id %>">
