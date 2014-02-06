@@ -116,13 +116,18 @@ class MainController < ApplicationController
     end 
   end
   
-  def change_user_role
+  def change_role
+    if current_user.role == 'admin' or current_user.email = 'smorey@tadl.org'
     role = params[:role]
-    u = User.find_by_username_id(params[:username])
+    u = User.find_by_email(params[:email])
     u.role = role
     u.save
+      @message = "done"
+    else
+      @message = "no rights"
+    end
     respond_with do |format|
-      format.json { render :json =>{message: "done"}}
+      format.json { render :json =>{message: @message}}
     end 
   end
   

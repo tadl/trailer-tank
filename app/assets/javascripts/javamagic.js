@@ -125,3 +125,20 @@ function refresh_trailers(page, state){
 }); 
 }
 
+function change_role(role, email, id){
+  var url = '/main/change_role.json?role='+ role +'&email='+ email
+  var edit_role_div = '#edit_role_' + id
+  $.ajax({
+  type: "GET",
+  url: url,
+  success: function(data){
+    if (data['message'] == 'done'){
+      $(edit_role_div).html("");
+    }else{
+      $(edit_role_div).append("error");
+    }
+  }
+}); 
+
+}
+

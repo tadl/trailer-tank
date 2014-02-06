@@ -2,14 +2,15 @@
 <% @users.each do |user| %>
 <div class="user_list_item">
   <img src="<%= user.avatar %>" style="max-width: 60px; min-width: 60px; float: left;">
-  <%= user.username %> Covers Uploaded: <%= user.score %>
-
+  <%= user.username %>, Covers Uploaded: <%= user.score %>, Role: <%= user.role %>
   <% if current_user.role == 'admin' %>
-  <a onclick="">Upgrade to Librarian</a> 
+    <div id="edit_role_<%= user.id %>">
+      <a onclick="change_role('librarian','<%= user.email %>','<%= user.id %>')">Upgrade to Librarian</a> 
+    </div>
   <% end %>
-<br>  
+
   <% if current_user.email == 'smorey@tadl.org' %>
-  <a onclick="">Upgrade to Admin</a>
+    <a onclick="change_role('admin','<%= user.email %>','<%= user.id %>')">Upgrade to Admin</a>
   <% end %>
 </div>
 <div style="clear: both"></div>
