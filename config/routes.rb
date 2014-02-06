@@ -4,9 +4,6 @@ TrailerTank::Application.routes.draw do
     get 'sign_in', :to => "main#index", :as => :new_user_session
     get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
   end
-  
-  
-
 
   root :to => "main#index" 
   get "main/index"
@@ -20,11 +17,8 @@ TrailerTank::Application.routes.draw do
   get "main/cant_find"
   get "main/action_trailers"
   get "main/from_txt_test"
-  
-  get 'messaging' => 'main#action_trailers'
-
-  
-
+  get "main/change_user_role"
+ 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

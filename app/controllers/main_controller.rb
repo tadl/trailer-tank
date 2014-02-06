@@ -116,36 +116,14 @@ class MainController < ApplicationController
     end 
   end
   
-  def from_txt_test
-    record_list = [];
-    record_ids = CSV.foreach("#{Rails.root}/db/records.txt") do |row|    
-      record = row.join
-      record_list = record_list.push(record)
-    end
-    record_details = [];
-    
-    record_list.each do |x|
-      url = 'http://catalog.tadl.org/osrf-gateway-v1?service=open-ils.search&method=open-ils.search.biblio.record.mods_slim.retrieve&locale=en-US&param=' + x.strip
-      record_info = JSON.parse(open(url).read)
-      details = record_info["payload"].map do |z| 
-        {
-          :title => z['__p'][0],
-          :artist => z['__p'][1],
-          :record_id => z['__p'][2],
-          :release_date => z['__p'][4],
-          :abstract => z['__p'][13],
-          :publisher => z['__p'][6],
-        }
-      end
-      record_details = record_details + details
-    end
-    
-    
-    
-    respond_to do |format|
-      format.json { render :json => { :message => record_details }}
+  def change_user_role
+    role = params[:role]
+    u = User.find_by_username_id(params[:username])
+    u.role = role
+    u.save
+    respond_with do |format|
+      format.json { render :json =>{message: "done"}}
     end 
   end
-  
   
 end  

@@ -1,8 +1,16 @@
-<h2>Leader Board</h2>
+<h2>Users</h2>
 <% @users.each do |user| %>
 <div class="user_list_item">
   <img src="<%= user.avatar %>" style="max-width: 60px; min-width: 60px; float: left;">
-<%= user.username %> Score: <%= user.score %>
+  <%= user.username %> Covers Uploaded: <%= user.score %>
+
+  <% if current_user.role == 'admin' %>
+  <a onclick="">Upgrade to Librarian</a> 
+  <% end %>
+<br>  
+  <% if current_user.email == 'smorey@tadl.org' %>
+  <a onclick="">Upgrade to Admin</a>
+  <% end %>
 </div>
 <div style="clear: both"></div>
 <% end %>
