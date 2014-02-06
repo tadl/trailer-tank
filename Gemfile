@@ -16,6 +16,7 @@ gem 'newrelic_rpm'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
+gem 'cancan'
 gem 'protected_attributes'
 gem 'dotenv-rails', :groups => [:development, :test]
 
