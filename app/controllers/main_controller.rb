@@ -131,4 +131,65 @@ class MainController < ApplicationController
     end 
   end
   
+  def add_record
+      @trailers = Trailer.where(:record_id => params[:id])
+      @record_number = params[:id]
+      if @trailers.count != 0
+        @message = 'Record Already Exisists'
+        @state = 'solo'
+        @current_page = 1
+      else
+        @message = 'Confirm Record Details'
+        if params[:id]
+          record_id = params[:id]
+          url = 'http://catalog.tadl.org/osrf-gateway-v1?service=open-ils.search&method=open-ils.search.biblio.record.mods_slim.retrieve&locale=en-US&param=' + record_id.strip
+          record_info = JSON.parse(open(url).read)
+          @details = Dish(record_info["payload"][0])
+          if record_info["payload"].size == 0
+          else
+            if record_info["payload"][0].size != 6 
+              @valid = 'yes'
+            end
+          end
+        end
+      end
+  end
+  
+
+  
+  def manual_add
+   if current_user.role == 'admin' or current_user.role == 'librarian'
+      url = 'http://catalog.tadl.org/osrf-gateway-v1?service=open-ils.search&method=open-ils.search.biblio.record.mods_slim.retrieve&locale=en-US&param=' + params[:id]
+      record_info = JSON.parse(open(url).read)
+      details = record_info["payload"].map do |z| 
+        {
+          :title => z['__p'][0],
+          :artist => z['__p'][1],
+          :record_id => z['__p'][2],
+          :release_date => z['__p'][4],
+          :abstract => z['__p'][13],
+          :publisher => z['__p'][6],
+          :item_type => z['__p'][9][0],
+          :track_list => z['__p'][15],
+        }
+      end
+    
+      details.each do |x|
+        t = Trailer.new
+        t.record_id = x[:record_id].to_s
+        t.title = x[:title].to_s
+        t.artist = x[:artist].to_s
+        t.abstract = x[:abstract].to_s
+        t.release_date = x[:release_date].to_s
+        t.publisher = x[:publisher].to_s
+        t.item_type = x[:item_type].to_s
+        t.track_list = x[:track_list].to_s
+        if t.valid? == true
+          t.save!
+          url = '/main/add_record?id=' + params[:id]
+          redirect_to (url)
+        end
+     end
+   end
+  end
 end  

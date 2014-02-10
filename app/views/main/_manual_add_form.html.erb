@@ -1,0 +1,23 @@
+<% if @valid == 'yes' %>
+<h1> Adding Record to Database </h1>
+<img src="http://catalog.tadl.org/opac/extras/ac/jacket/medium/r/<%= @details.__p[2] %>" style="float:left; max-width: 125px; margin: 10px;">
+Title: <%= @details.__p[0] %>
+<br>
+Author/Artist: <%= @details.__p[1] %>
+<br>
+Release Date: <%= @details.__p[4] %>
+<br>
+Abstract: <%= @details.__p[13] %>
+<br>
+Publisher: <%= @details.__p[6] %>
+<br>
+Item Type: <%= @details.__p[9][0] %>
+<br>
+Track Listing: <%= @details.__p[15] %>
+<br>
+<a onclick="">Confirm and Save</a>
+
+<% else %>
+<h1> Bad Record ID </h1>
+Record ID did not match any in Evergreen Database. Please try again.
+<% end %>

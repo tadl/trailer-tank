@@ -37,7 +37,7 @@ function check_n_save(data, record_id, title, youtube_id, page, state, current_u
         type: 'GET',
         dataType: "json",
         success: function(data) {
-          if (state == 'search' ){ 
+          if (state == 'search' || state == 'solo'){ 
             var score = data.message
             $(trailer_div).html(trailer_code);
             $(edit_div).html('');
@@ -98,6 +98,16 @@ function search_by_title(){
     window.open(url,"_self")
      }else{
     alert("enter a title!");  
+     }     
+}
+
+function add_by_record(){
+ var id = $('#add_by').val();
+  if (id){
+    var url = '/main/add_record?id=' + id
+    window.open(url,"_self")
+     }else{
+    alert("enter a record id!");  
      }     
 }
 

@@ -16,9 +16,9 @@ gem 'newrelic_rpm'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
-gem 'cancan'
 gem 'protected_attributes'
 gem 'dotenv-rails', :groups => [:development, :test]
+gem 'dish'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

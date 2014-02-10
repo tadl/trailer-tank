@@ -1,7 +1,9 @@
 <% if @search %>
 <h2>Searching for: <%= @search %></h2>
 <% end %>
-
+  <% if @state == 'solo' %>
+<h2>Record # <%= @record_number %></h2>
+<%else%>
 <div id="paginate_top">
   <% if @state == 'queue' %>
   <%= will_paginate @trailers, :params => {:controller => 'main', :action => 'queue', :format => 'html'} %>
@@ -9,6 +11,7 @@
   <%= will_paginate @trailers %>
   <% end %>
 </div>  
+<%end %>  
  <% @trailers.each do |trailer| %>
 <img src="http://catalog.tadl.org/opac/extras/ac/jacket/medium/r/<%= trailer.record_id %>" style="float:left; max-width: 125px; margin: 10px;">
 <div id="info_line_one">
@@ -49,6 +52,13 @@ Marked as Not Found
 
 <div style="clear: both"></div>
     <% end %>
+  <% if @state == 'solo' %>
+<%else%>
 <div id="paginate_bottom">
-<%= will_paginate @trailers, :params => {:controller => 'main', :action => 'queue', :format => 'html'} %>
+  <% if @state == 'queue' %>
+  <%= will_paginate @trailers, :params => {:controller => 'main', :action => 'queue', :format => 'html'} %>
+  <% else %>
+  <%= will_paginate @trailers %>
+  <% end %>
 </div>  
+<%end %>  

@@ -15,12 +15,19 @@
   <div id="nav_bar">
     <ul>
     <li><a href="/main/queue">Queue</a></li>
-    <li><a href="/main/cant_find">Not Found List</a></li>  
-    <li><a href="/main/leaders">Leader Boards</a></li>
+    <li><a href="/main/cant_find">Not Found</a></li>  
+    <li><a href="/main/leaders">Stats</a></li>
     <li> 
-      <div id="search_div">  Search: <input id="search" type="text">
+      <div id="search_div">  Search by Title: <input id="search" type="text">
       <button onclick="search_by_title()">GO</button>
       </div> 
+    </li>
+    <li>
+      <% if current_user.role == 'admin' %>
+     <div id="add_div">  Add by Record #: <input id="add_by" type="text">
+      <button onclick="add_by_record()">GO</button>
+      </div> 
+      <% end %>
     </li>
     </ul>
   </div>
