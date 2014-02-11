@@ -21,8 +21,8 @@ task :records_from_txt => :environment do
           :release_date => z['__p'][4],
           :abstract => z['__p'][13],
           :publisher => z['__p'][6],
-          :track_list = z['__p'][15],
-          :item_type = z['__p'][9][0]
+          :track_list => z['__p'][15],
+          :item_type => z['__p'][9][0]
         }
       end
       record_details = record_details + details
