@@ -17,10 +17,14 @@
 <div id="info_line_one">
   
 <p>
-  <span style="font-size: 15px;"><%= trailer.title %>,</span> Release Date: <%= trailer.release_date %>, Released By: <%= trailer.publisher %> </p>
+  <span style="font-size: 15px;"><%= trailer.title %>,</span> Item Type: <%= trailer.item_type %>, Release Date: <%= trailer.release_date %>, Released By: <%= trailer.publisher %> </p>
 </div>  
-<p>Actor/Director: <%= trailer.artist %> </p>
+<p>Artist(s): <%= trailer.artist %> </p>
 <p>Description: <%= truncate trailer.abstract, length: 300 %> </p>
+<% if !trailer.track_list.empty? %>
+<p>Track Listing: <%= trailer.track_list %></p>
+<% end %>
+
 <div id="trailer_<%= trailer.record_id %>">
 <% if trailer.youtube_url? %>
 <a onclick="show_trailer('<%= CGI.escapeHTML trailer.youtube_url %>')">Show Trailer</a> 

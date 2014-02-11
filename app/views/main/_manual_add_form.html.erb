@@ -1,23 +1,22 @@
 <% if @valid == 'yes' %>
 <h1> Adding Record to Database </h1>
+
 <img src="http://catalog.tadl.org/opac/extras/ac/jacket/medium/r/<%= @details.__p[2] %>" style="float:left; max-width: 125px; margin: 10px;">
-Title: <%= @details.__p[0] %>
-<br>
-Author/Artist: <%= @details.__p[1] %>
-<br>
-Release Date: <%= @details.__p[4] %>
-<br>
-Abstract: <%= @details.__p[13] %>
-<br>
-Publisher: <%= @details.__p[6] %>
-<br>
-Item Type: <%= @details.__p[9][0] %>
-<br>
-Track Listing: <%= @details.__p[15] %>
-<br>
-<a onclick="">Confirm and Save</a>
+<div id="info_line_one">
+  
+<p>
+  <span style="font-size: 15px;"><%= @details.__p[0] %>,</span> Item Type: <%= @details.__p[9][0] %>, Release Date: <%= @details.__p[4] %>, Released By: <%= @details.__p[6] %> </p>
+</div>  
+<p>Artist(s): <%= @details.__p[1] %> </p>
+<p>Description: <%= truncate @details.__p[13], length: 300 %> </p>
+<% if !@details.__p[15].empty? %>
+<p>Track Listing: <%= @details.__p[15] %></p>
+<% end %>
+
+<a onclick="confirm_add('<%= @details.__p[2] %>')">Confirm and Save</a>
 
 <% else %>
 <h1> Bad Record ID </h1>
 Record ID did not match any in Evergreen Database. Please try again.
 <% end %>
+

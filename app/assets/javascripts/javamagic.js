@@ -111,6 +111,12 @@ function add_by_record(){
      }     
 }
 
+function confirm_add(id){
+  var url = '/main/manual_add?id=' + id
+  window.open(url,"_self")
+}
+
+
 function search_youtube(title){
  var clean_title = encodeURIComponent(title); 
  var url ='http://www.youtube.com/results?search_query=' + clean_title +' trailer';
