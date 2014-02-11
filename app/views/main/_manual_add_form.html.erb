@@ -9,7 +9,7 @@
 </div>  
 <p>Artist(s): <%= @details.__p[1] %> </p>
 <p>Description: <%= truncate @details.__p[13], length: 300 %> </p>
-<% if !@details.__p[15].empty? %>
+<% if @details.__p[15] %>
 <p>Track Listing: <%= @details.__p[15] %></p>
 <% end %>
 
