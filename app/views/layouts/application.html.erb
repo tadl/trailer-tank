@@ -23,7 +23,7 @@
       </div> 
     </li>
     <li>
-      <% if current_user.role == 'admin' %>
+      <% if current_user.role == 'admin' or current_user.role == 'librarian'  %>
      <div id="add_div">  Add by Record #: <input id="add_by" type="text">
       <button onclick="add_by_record()">GO</button>
       </div> 
