@@ -7,7 +7,7 @@ $( document ).ready(function() {
 function check_for_embed(record_id, title, page, state, current_user){
  var target_div = '#input_' + record_id;
  var youtube_url = $(target_div).val();
- var youtube_id = youtube_url.replace('http://www.youtube.com/watch?v=','').replace('https://www.youtube.com/watch?v=','');
+ var youtube_id = youtube_url.replace('http://www.youtube.com/watch?v=','').replace('https://www.youtube.com/watch?v=','').split(/&/)[0];
  var youtube_check = 'https://gdata.youtube.com/feeds/api/videos/'+ youtube_id +'?v=2&alt=jsonc'
  $.ajax({
         url: youtube_check,
