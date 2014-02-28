@@ -12,6 +12,7 @@ class MainController < ApplicationController
     if current_user != nil
       redirect_to action: 'queue'
     end 
+    
   end
   
   def queue
@@ -58,6 +59,7 @@ class MainController < ApplicationController
   end
   
   def leaders
+    @trailers_count = Trailer.where.not(:youtube_url => nil, :cant_find => true).count
     @users = User.all.order("score DESC")
   end
 

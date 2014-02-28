@@ -1,10 +1,11 @@
+<h2> <%= @trailers_count %> trailers connected with records so far.</h2>
 <h2>Users</h2>
 <% @users.each do |user| %>
 <div class="user_list_item">
   <% if user.avatar %>
     <img src="<%= user.avatar %>" style="max-width: 60px; min-width: 60px; float: left;">
   <% else %>
-    <img src="http://www.insertpuppy.com/60-60-random" style="max-width: 60px; min-width: 60px; float: left;">
+    <img src="http://placekitten.com/60/60" style="max-width: 60px; min-width: 60px; float: left;">
   <% end %>
   <%= user.username %>, Covers Uploaded: <%= user.score %>, Role: <%= user.role %>
   <% if current_user.role == 'admin' %>
