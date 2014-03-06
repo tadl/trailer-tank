@@ -59,7 +59,9 @@ class MainController < ApplicationController
   end
   
   def leaders
-    @trailers_count = Trailer.where.not(:youtube_url => nil, :cant_find => true).count
+    trailers_all_without = Trailer.where(:youtube_url => nil).count
+    trailers_total = Trailer.count
+    @trailers_count = trailers_total - trailers_all_without
     @users = User.all.order("score DESC")
   end
 

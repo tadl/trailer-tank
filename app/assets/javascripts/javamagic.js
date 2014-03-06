@@ -24,12 +24,13 @@ function check_for_embed(record_id, title, page, state, current_user){
 }
 
 function check_n_save(data, record_id, title, youtube_id, page, state, current_user){
-  var test = data.data.accessControl.embed;
+  var can_embed = data.data.accessControl.embed
+  var can_embed_mobile = data.data.accessControl.syndicate
   var trailer_div = '#trailer_' + record_id
   var edit_div = '#edit_' + record_id
   var trailer_code = '<a onclick="show_trailer(\''+ youtube_id +'\')">Show Trailer</a> - Uploaded By: '+ current_user +' <button onclick="delete_embed(\''+ record_id +'\',\''+ title +'\',\''+ page +'\',\''+ state +'\',\''+ current_user +'\')">Delete Trailer</button>' 
-  if (test == 'denied'){
-    $(message_div).html("This video does not allow embedding. Please try another.");
+  if (can_embed == 'denied' || can_embed_mobile == 'denied' ){
+    alert("This video does not allow embedding and/or mobile playback. Please try another.");
       }else{
       save_url = '/main/update_trailer.json?id='+ record_id +'&yt='+ youtube_id;
       $.ajax({
