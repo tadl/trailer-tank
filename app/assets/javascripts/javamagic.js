@@ -26,9 +26,10 @@ function check_for_embed(record_id, title, page, state, current_user){
 function check_n_save(data, record_id, title, youtube_id, page, state, current_user){
   var can_embed = data.data.accessControl.embed
   var can_embed_mobile = data.data.accessControl.syndicate
+  var clean_title = title.replace("'", "%25")
   var trailer_div = '#trailer_' + record_id
   var edit_div = '#edit_' + record_id
-  var trailer_code = '<a onclick="show_trailer(\''+ youtube_id +'\')">Show Trailer</a> - Uploaded By: '+ current_user +' <button onclick="delete_embed(\''+ record_id +'\',\''+ title +'\',\''+ page +'\',\''+ state +'\',\''+ current_user +'\')">Delete Trailer</button>' 
+  var trailer_code = '<a onclick="show_trailer(\''+ youtube_id +'\')">Show Trailer</a> - Uploaded By: '+ current_user +' <button onclick="delete_embed(\''+ record_id +'\',\''+ clean_title +'\',\''+ page +'\',\''+ state +'\',\''+ current_user +'\')">Delete Trailer</button>' 
   if (can_embed == 'denied' || can_embed_mobile == 'denied' ){
     alert("This video does not allow embedding and/or mobile playback. Please try another.");
       }else{
@@ -49,9 +50,10 @@ function check_n_save(data, record_id, title, youtube_id, page, state, current_u
             refresh_trailers(page, state);
           }
         } 
-        });
-      }
+      });
+    } 
 }
+
 
 function delete_embed(record_id, title, page, state, current_user){
   var delete_url = '/main/delete_trailer.json?id='+ record_id 
@@ -119,7 +121,7 @@ function confirm_add(id){
 
 
 function search_youtube(title){
- var clean_title = encodeURIComponent(title); 
+  var clean_title = title.replace("%25","'")
  var url ='http://www.youtube.com/results?search_query=' + clean_title +' trailer';
  window.open(url);
 }
