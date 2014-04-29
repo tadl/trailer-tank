@@ -121,7 +121,7 @@ function confirm_add(id){
 
 
 function search_youtube(title){
-  var clean_title = title.replace("%25","'")
+  var clean_title = title.replace("%25","'").replace("&","%26")
  var url ='http://www.youtube.com/results?search_query=' + clean_title +' trailer';
  window.open(url);
 }
