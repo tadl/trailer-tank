@@ -5,7 +5,7 @@ class MainController < ApplicationController
   require 'json'
   require 'uri' 
   require 'csv'
-  before_action :authenticate_user!, :except => [:index, :get_trailer]
+  before_action :authenticate_user!, :except => [:index, :get_trailer, :random_trailers]
   respond_to :html, :json
   
   def index
@@ -157,6 +157,13 @@ class MainController < ApplicationController
           end
         end
       end
+  end
+
+  def random_trailers
+    @trailers = Trailer.where.not(:youtube_url => nil).where(:item_type => 'moving image').order('RANDOM()').limit(100)
+     respond_with do |format|
+      format.json { render :json => @trailers}
+    end 
   end
   
 

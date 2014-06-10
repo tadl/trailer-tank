@@ -20,6 +20,7 @@ TrailerTank::Application.routes.draw do
   get "main/change_role"
   get "main/add_record"
   get "main/manual_add"
+  get "main/random_trailers"
  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
