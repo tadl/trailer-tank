@@ -8,7 +8,7 @@ function check_for_embed(record_id, title, page, state, current_user){
  var target_div = '#input_' + record_id;
  var youtube_url = $(target_div).val();
  var youtube_id = youtube_url.replace('http://www.youtube.com/watch?v=','').replace('https://www.youtube.com/watch?v=','').split(/&/)[0];
- var youtube_check = 'https://gdata.youtube.com/feeds/api/videos/'+ youtube_id +'?v=2&alt=jsonc'
+ var youtube_check = 'http://trailer-tank.herokuapp.com/main/check_video.json?video_id='+ youtube_id
  $.ajax({
         url: youtube_check,
         type: 'GET',
@@ -24,13 +24,12 @@ function check_for_embed(record_id, title, page, state, current_user){
 }
 
 function check_n_save(data, record_id, title, youtube_id, page, state, current_user){
-  var can_embed = data.data.accessControl.embed
-  var can_embed_mobile = data.data.accessControl.syndicate
+  var can_embed = data.embeddable
   var clean_title = title.replace("'", "%25")
   var trailer_div = '#trailer_' + record_id
   var edit_div = '#edit_' + record_id
   var trailer_code = '<a onclick="show_trailer(\''+ youtube_id +'\')">Show Trailer</a> - Uploaded By: '+ current_user +' <button onclick="delete_embed(\''+ record_id +'\',\''+ clean_title +'\',\''+ page +'\',\''+ state +'\',\''+ current_user +'\')">Delete Trailer</button>' 
-  if (can_embed == 'denied' || can_embed_mobile == 'denied' ){
+  if (can_embed != true){
     alert("This video does not allow embedding and/or mobile playback. Please try another.");
       }else{
       save_url = '/main/update_trailer.json?id='+ record_id +'&yt='+ youtube_id;

@@ -5,6 +5,9 @@ class MainController < ApplicationController
   require 'json'
   require 'uri' 
   require 'csv'
+  require 'google/api_client'
+  require 'google/api_client/client_secrets'
+  require 'google/api_client/auth/installed_app'
   before_action :authenticate_user!, :except => [:index, :get_trailer, :random_trailers]
   respond_to :html, :json
   
@@ -133,6 +136,37 @@ class MainController < ApplicationController
     respond_with do |format|
       format.json { render :json =>{message: @message}}
     end 
+  end
+
+  def check_video
+    video_id = params[:video_id]
+    service_account_email = ENV['service_account_email']
+    keypath = Rails.root.join('config', ENV['service_account_key_name']).to_s
+    client = Google::APIClient.new(
+      :application_name => 'tadl_gcal',
+      :application_version => '1.0.0'
+    )
+    key = OpenSSL::PKey::RSA.new ENV["key"], 'notasecret'
+    client.authorization = Signet::OAuth2::Client.new(
+      :token_credential_uri => 'https://accounts.google.com/o/oauth2/token',
+      :audience => 'https://accounts.google.com/o/oauth2/token',
+      :scope => ['https://www.googleapis.com/auth/youtube'],
+      :issuer => service_account_email,
+      :signing_key => key
+    )
+    client.authorization.fetch_access_token!
+    youtube_api = client.discovered_api('youtube', 'v3')
+    result = client.execute({
+        :api_method => youtube_api.videos.list,
+        :parameters => {
+          part: 'status',
+          id: video_id,
+        },
+        :headers => {'Content-Type' => 'application/json'}
+      })
+    respond_with do |format|
+      format.json { render :json => result.data.items[0].status}
+    end
   end
   
   def add_record

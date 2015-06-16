@@ -19,6 +19,7 @@ gem 'omniauth-google-oauth2'
 gem 'protected_attributes'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'dish'
+gem 'google-api-client'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
