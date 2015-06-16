@@ -141,7 +141,6 @@ class MainController < ApplicationController
   def check_video
     video_id = params[:video_id]
     service_account_email = ENV['service_account_email']
-    keypath = Rails.root.join('config', ENV['service_account_key_name']).to_s
     client = Google::APIClient.new(
       :application_name => 'tadl_gcal',
       :application_version => '1.0.0'
