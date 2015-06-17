@@ -139,6 +139,7 @@ class MainController < ApplicationController
   end
 
   def check_video
+    headers['Access-Control-Allow-Origin'] = "*"
     video_id = params[:video_id]
     service_account_email = ENV['service_account_email']
     client = Google::APIClient.new(
