@@ -9,8 +9,13 @@ class MainController < ApplicationController
   require 'google/api_client/client_secrets'
   require 'google/api_client/auth/installed_app'
   before_action :authenticate_user!, :except => [:index, :get_trailer, :random_trailers]
+  before_filter :set_headers
   respond_to :html, :json
   
+      def set_headers
+        headers['Access-Control-Allow-Origin'] = '*'
+    end
+
   def index
     if current_user != nil
       redirect_to action: 'queue'
