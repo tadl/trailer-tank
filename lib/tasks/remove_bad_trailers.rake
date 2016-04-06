@@ -27,9 +27,10 @@ task :remove_bad_trailers => :environment do
           id: video_id,
         }
       })
-    return result.data.items[0].status
+    return result.data.items[0].status rescue nil
   end
-
+  bad_ones = 0
+  good_ones = 0
   Trailer.all.each do |t|
   	if t.youtube_url
   		puts 'testing ' + t.title
@@ -39,9 +40,12 @@ task :remove_bad_trailers => :environment do
   			puts 'bad one'
   			t.youtube_url = nil
   			t.save
+  			bad_ones += 1
   		else
   			puts 'good one'
+  			good_ones += 1
   		end
+  		puts 'so far we have had ' + good_ones.to_s + ' good ones and ' + bad_ones.to_s + ' bad ones'
   		sleep(2)
   	end
   end
