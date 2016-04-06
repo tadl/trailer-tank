@@ -11,7 +11,7 @@ task :records_from_txt => :environment do
     record_details = [];
     
     record_list.each do |x|
-      url = 'http://catalog.tadl.org/osrf-gateway-v1?service=open-ils.search&method=open-ils.search.biblio.record.mods_slim.retrieve&locale=en-US&param=' + x.strip
+      url = 'http://mr-v2.catalog.tadl.org/osrf-gateway-v1?service=open-ils.search&method=open-ils.search.biblio.record.mods_slim.retrieve&locale=en-US&param=' + x.strip
       record_info = JSON.parse(open(url).read)
       details = record_info["payload"].map do |z| 
         {

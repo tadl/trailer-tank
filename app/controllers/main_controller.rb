@@ -179,7 +179,7 @@ class MainController < ApplicationController
         @message = 'Confirm Record Details'
         if params[:id]
           record_id = params[:id]
-          url = 'http://catalog.tadl.org/osrf-gateway-v1?service=open-ils.search&method=open-ils.search.biblio.record.mods_slim.retrieve&locale=en-US&param=' + record_id.strip
+          url = 'http://mr-v2.catalog.tadl.org/osrf-gateway-v1?service=open-ils.search&method=open-ils.search.biblio.record.mods_slim.retrieve&locale=en-US&param=' + record_id.strip
           record_info = JSON.parse(open(url).read)
           @details = Dish(record_info["payload"][0])
           if record_info["payload"].size == 0
@@ -203,7 +203,7 @@ class MainController < ApplicationController
   
   def manual_add
    if current_user.role == 'admin' or current_user.role == 'librarian'
-      url = 'http://catalog.tadl.org/osrf-gateway-v1?service=open-ils.search&method=open-ils.search.biblio.record.mods_slim.retrieve&locale=en-US&param=' + params[:id]
+      url = 'http://mr-v2.catalog.tadl.org/osrf-gateway-v1?service=open-ils.search&method=open-ils.search.biblio.record.mods_slim.retrieve&locale=en-US&param=' + params[:id]
       record_info = JSON.parse(open(url).read)
       details = record_info["payload"].map do |z| 
         {
