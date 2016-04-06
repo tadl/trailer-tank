@@ -42,6 +42,7 @@ task :remove_bad_trailers => :environment do
   		else
   			puts 'good one'
   		end
+  		sleep(2)
   	end
   end
 
