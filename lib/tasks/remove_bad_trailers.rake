@@ -27,7 +27,7 @@ task :remove_bad_trailers => :environment do
           id: video_id,
         }
       })
-    return result.data.items[0].status rescue nil
+    return result.data.items[0].status 
   end
   bad_ones = 0
   good_ones = 0
@@ -46,7 +46,7 @@ task :remove_bad_trailers => :environment do
   			good_ones += 1
   		end
   		puts 'so far we have had ' + good_ones.to_s + ' good ones and ' + bad_ones.to_s + ' bad ones'
-  		sleep(2)
+  		sleep(5)
   	end
   end
 
