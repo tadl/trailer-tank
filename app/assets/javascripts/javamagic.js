@@ -8,7 +8,7 @@ function check_for_embed(record_id, title, page, state, current_user){
  var target_div = '#input_' + record_id;
  var youtube_url = $(target_div).val();
  var youtube_id = youtube_url.replace('http://www.youtube.com/watch?v=','').replace('https://www.youtube.com/watch?v=','').split(/&/)[0];
- var youtube_check = 'https://trailer-tank.herokuapp.com/main/check_video.json?video_id='+ youtube_id
+ var youtube_check = '/main/check_video.json?video_id='+ youtube_id
  $.ajax({
         url: youtube_check,
         type: 'GET',

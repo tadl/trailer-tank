@@ -10,7 +10,7 @@ class MainController < ApplicationController
   require 'google/api_client/auth/installed_app'
   before_action :authenticate_user!, :except => [:index, :get_trailer, :random_trailers]
   respond_to :html, :json
-  
+
   def index
     if current_user != nil
       redirect_to action: 'queue'
@@ -139,6 +139,7 @@ class MainController < ApplicationController
   end
 
   def check_video
+    headers['Access-Control-Allow-Origin'] = "*"
     video_id = params[:video_id]
     service_account_email = ENV['service_account_email']
     client = Google::APIClient.new(
@@ -160,8 +161,7 @@ class MainController < ApplicationController
         :parameters => {
           part: 'status',
           id: video_id,
-        },
-        :headers => {'Content-Type' => 'application/json'}
+        }
       })
     respond_with do |format|
       format.json { render :json => result.data.items[0].status}
