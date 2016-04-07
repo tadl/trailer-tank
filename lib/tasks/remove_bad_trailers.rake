@@ -27,17 +27,17 @@ task :remove_bad_trailers => :environment do
           id: video_id,
         }
       })
-    return result.data.items[0].status 
+    return result.data.items[0].status rescue 'bad'
   end
   bad_ones = 0
   good_ones = 0
   Trailer.all.each do |t|
-  	if t.youtube_url && t.youtube_url != '8Jz-8UcCiws'
+  	if t.youtube_url 
   		puts 'testing ' + t.title
   		puts t.youtube_url
   		test = check_video_rake(t.youtube_url)
   		puts test["uploadStatus"]
-  		if test["uploadStatus"] == 'rejected'
+  		if test == 'bad' || test["uploadStatus"] == 'rejected'
   			puts 'bad one'
   			t.youtube_url = nil
   			t.save
