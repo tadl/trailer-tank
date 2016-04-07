@@ -36,7 +36,6 @@ task :remove_bad_trailers => :environment do
   		puts 'testing ' + t.title
   		puts t.youtube_url
   		test = check_video_rake(t.youtube_url)
-  		puts test["uploadStatus"]
   		if test == 'bad' || test["uploadStatus"] == 'rejected'
   			puts 'bad one'
   			t.youtube_url = nil
