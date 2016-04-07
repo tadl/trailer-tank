@@ -32,8 +32,9 @@ task :remove_bad_trailers => :environment do
   bad_ones = 0
   good_ones = 0
   Trailer.all.each do |t|
-  	if t.youtube_url
+  	if t.youtube_url && t.youtube_url != '8Jz-8UcCiws'
   		puts 'testing ' + t.title
+  		puts t.youtube_url
   		test = check_video_rake(t.youtube_url)
   		puts test["uploadStatus"]
   		if test["uploadStatus"] == 'rejected'
@@ -46,7 +47,7 @@ task :remove_bad_trailers => :environment do
   			good_ones += 1
   		end
   		puts 'so far we have had ' + good_ones.to_s + ' good ones and ' + bad_ones.to_s + ' bad ones'
-  		sleep(5)
+  		sleep(1)
   	end
   end
 
