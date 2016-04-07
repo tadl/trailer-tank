@@ -19,15 +19,19 @@ task :remove_bad_trailers => :environment do
       :signing_key => key
     )
     client.authorization.fetch_access_token!
-    youtube_api = client.discovered_api('youtube', 'v3')
-    result = client.execute({
-        :api_method => youtube_api.videos.list,
-        :parameters => {
-          part: 'status',
-          id: video_id,
-        }
-      })
-    return result.data.items[0].status rescue 'bad'
+    youtube_api = client.discovered_api('youtube', 'v3') rescue nil
+    if youtube_api != nil
+    	result = client.execute({
+        	:api_method => youtube_api.videos.list,
+        	:parameters => {
+          		part: 'status',
+          		id: video_id,
+        	}
+      	})
+    	return result.data.items[0].status rescue 'bad'
+    else
+    	return check_video_rake(video_id)
+    end
   end
   bad_ones = 0
   good_ones = 0
