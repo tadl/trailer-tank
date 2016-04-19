@@ -35,7 +35,7 @@ task :remove_bad_trailers => :environment do
   end
   bad_ones = 0
   good_ones = 0
-  Trailer.all.each do |t|
+  Trailer.all.reverse.each do |t|
   	if t.youtube_url 
   		puts 'testing ' + t.title
   		puts t.youtube_url
