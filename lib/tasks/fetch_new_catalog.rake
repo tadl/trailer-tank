@@ -5,7 +5,7 @@ task :fetch_new_catalog => :environment do
   require 'open-uri'
   require 'json'
   
-    videos_new = JSON.parse(open("https://catalog.apps.tadl.org/main/index.json").read)
+    videos_new = JSON.parse(open("https://catalog.tadl.org/main/index.json").read)
     record_ids = Array.new
     videos_new['featured_items'].each do |v|
       if v['title'] == "tadl_movies_list"
