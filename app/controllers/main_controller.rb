@@ -199,6 +199,13 @@ class MainController < ApplicationController
     end 
   end
   
+  def trailer_dump
+    @trailers = Trailers.all
+    respond_to do |format|
+      format.json {render :json => @trailers }
+      format.xlsx
+    end
+  end
 
   
   def manual_add

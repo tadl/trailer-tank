@@ -22,6 +22,7 @@ TrailerTank::Application.routes.draw do
   get "main/manual_add"
   get "main/random_trailers"
   get "main/check_video"
+  get "main/trailer_dump"
  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
