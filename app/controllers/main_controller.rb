@@ -200,7 +200,7 @@ class MainController < ApplicationController
   end
   
   def trailer_dump
-    @trailers = Trailers.all
+    @trailers = Trailer.all
     respond_to do |format|
       format.json {render :json => @trailers }
       format.xlsx
