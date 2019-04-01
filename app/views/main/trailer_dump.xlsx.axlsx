@@ -1,7 +1,7 @@
 wb = xlsx_package.workbook
 wb.add_worksheet(name: "Products") do |sheet|
-  sheet.add_row ['record_id', 'added_by','youtube_url','user_id','cant_find']
+  sheet.add_row ['record_id', 'added_by','youtube_url','user_id','cant_find','title','artist','publisher','release_date','abstract','track_list','item_type']
   @trailers.each do |t|
-    sheet.add_row [t.record_id, t.added_by, t.youtube_url, t.user_id, t.cant_find]
+    sheet.add_row [t.record_id, t.added_by, t.youtube_url, t.user_id, t.cant_find, t.title, t.artist, t.publisher, t.release_date, t.abstract, t.track_list, t.item_type]
   end
 end
